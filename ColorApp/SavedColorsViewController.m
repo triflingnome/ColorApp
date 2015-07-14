@@ -25,7 +25,6 @@
     [super viewDidLoad];
     self.title = SAVED_COLORS_TITLE;
     tipsMethodsClassInstance = [[TipsMethods alloc] init];
-    [tipsMethodsClassInstance showStarterTipFromViewController:self];
     
     self.name = [[NSMutableArray alloc] init];
     self.redval = [[NSMutableArray alloc] init];

@@ -31,7 +31,6 @@
     [super viewDidLoad];
     self.title = COLOR_EXTRACTOR_TITLE;
     tipsMethodsClassInstance = [[TipsMethods alloc] init];
-    [tipsMethodsClassInstance showStarterTipFromViewController:self];
     
     colorMethodsClassInstance = [[ColorMethods alloc] init];
     databaseMethodsClassInstance = [[DatabaseMethods alloc] init];

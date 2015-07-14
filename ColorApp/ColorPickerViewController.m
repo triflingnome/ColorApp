@@ -22,7 +22,6 @@
     [super viewDidLoad];
     self.title = COLOR_PICKER_TITLE;
     tipsMethodsClassInstance = [[TipsMethods alloc] init];
-    [tipsMethodsClassInstance showStarterTipFromViewController:self];
     
     selectedColorSwatchView = 0;
     

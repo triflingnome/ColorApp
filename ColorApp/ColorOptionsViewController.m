@@ -20,7 +20,6 @@
     [super viewDidLoad];
     self.title = COLOR_OPTIONS_TITLE;
     tipsMethodsClassInstance = [[TipsMethods alloc] init];
-    //[tipsMethodsClassInstance showStarterTipFromViewController:self];
     
     [self setSwitchStatesBasedOnUserDefaults];
 }// end viewDidLoad

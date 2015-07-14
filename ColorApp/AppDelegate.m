@@ -22,9 +22,6 @@
         
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:USER_DEFAULT_SHOW_NEW_USER_TIP];
         
-        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"ShowStarterTips"];
-        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"ShowTipOfTheDay"];
-        
         [[NSUserDefaults standardUserDefaults] synchronize];
     }// end if
     
