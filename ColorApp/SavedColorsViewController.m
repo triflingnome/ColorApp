@@ -25,7 +25,6 @@
     [super viewDidLoad];
     self.title = SAVED_COLORS_TITLE;
     tipsMethodsClassInstance = [[TipsMethods alloc] init];
-    [tipsMethodsClassInstance showStarterTipFromViewController:self];
     
     self.name = [[NSMutableArray alloc] init];
     self.redval = [[NSMutableArray alloc] init];
@@ -67,6 +66,11 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)showInfoButtonTipSelector:(id)sender {
+    [tipsMethodsClassInstance showInfoButtonTipWithTipNumber:0
+                                            inViewController:self];
 }
 
 #pragma mark -- UITableViewDelegate methods

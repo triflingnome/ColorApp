@@ -31,7 +31,6 @@
     [super viewDidLoad];
     self.title = COLOR_EXTRACTOR_TITLE;
     tipsMethodsClassInstance = [[TipsMethods alloc] init];
-    [tipsMethodsClassInstance showStarterTipFromViewController:self];
     
     colorMethodsClassInstance = [[ColorMethods alloc] init];
     databaseMethodsClassInstance = [[DatabaseMethods alloc] init];
@@ -91,6 +90,11 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)showInfoButtonTipSelector:(id)sender {
+    [tipsMethodsClassInstance showInfoButtonTipWithTipNumber:0
+                                            inViewController:self];
 }
 
 - (void)singleTapGestureSelector:(id)sender {

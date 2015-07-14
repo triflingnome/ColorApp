@@ -20,10 +20,14 @@
     [super viewDidLoad];
     self.title = COLOR_OPTIONS_TITLE;
     tipsMethodsClassInstance = [[TipsMethods alloc] init];
-    //[tipsMethodsClassInstance showStarterTipFromViewController:self];
     
     [self setSwitchStatesBasedOnUserDefaults];
 }// end viewDidLoad
+
+- (IBAction)showInfoButtonTipSelector:(id)sender {
+    [tipsMethodsClassInstance showInfoButtonTipWithTipNumber:0
+                                            inViewController:self];
+}
 
 - (void)setSwitchStatesBasedOnUserDefaults {
     //NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];

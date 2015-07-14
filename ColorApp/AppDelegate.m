@@ -19,8 +19,8 @@
     // Override point for customization after application launch.
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"HasLaunchedOnce"]) {
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"HasLaunchedOnce"];
-        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"ShowStarterTips"];
-        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"ShowTipOfTheDay"];
+        
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:USER_DEFAULT_SHOW_NEW_USER_TIP];
         
         [[NSUserDefaults standardUserDefaults] synchronize];
     }// end if

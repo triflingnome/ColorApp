@@ -22,7 +22,6 @@
     [super viewDidLoad];
     self.title = COLOR_PICKER_TITLE;
     tipsMethodsClassInstance = [[TipsMethods alloc] init];
-    [tipsMethodsClassInstance showStarterTipFromViewController:self];
     
     selectedColorSwatchView = 0;
     
@@ -71,8 +70,9 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (UIStatusBarStyle) preferredStatusBarStyle {
-    return UIStatusBarStyleLightContent;
+- (IBAction)showInfoButtonTipSelector:(id)sender {
+    [tipsMethodsClassInstance showInfoButtonTipWithTipNumber:0
+                                            inViewController:self];
 }
 
 - (void)updateColorSwatchView {
