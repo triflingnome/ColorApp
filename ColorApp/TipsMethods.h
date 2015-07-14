@@ -14,6 +14,8 @@
 
 - (void)showStarterTipFromViewController:(UIViewController *)vc;
 - (void)showTipOfTheDayFromViewController:(UIViewController *)vc;
+
 - (void)showInfoButtonTipWithTipNumber:(int)i inViewController:(UIViewController *)vc;
+- (void)showNewUserTipFromViewController:(UIViewController *)vc;
 
 @end

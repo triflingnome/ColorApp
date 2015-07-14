@@ -85,7 +85,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="cer-A1-4xv">
-                        <barButtonItem key="rightBarButtonItem" image="Info-Icon" id="qyV-1r-Hh1"/>
+                        <barButtonItem key="rightBarButtonItem" image="Info-Icon" id="qyV-1r-Hh1">
+                            <connections>
+                                <action selector="showInfoButtonTipSelector:" destination="abS-QG-aUu" id="5F4-xd-c5k"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="starterTipsSwitch" destination="I6s-kb-idc" id="qIO-q9-s0w"/>
@@ -187,9 +191,6 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="infoBarButton" destination="g0M-dO-NCL" id="cja-hc-Btq"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ytv-0Q-Pqu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -427,7 +428,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="aJt-4O-W33">
-                        <barButtonItem key="rightBarButtonItem" image="Info-Icon" id="i0c-tr-1tC"/>
+                        <barButtonItem key="rightBarButtonItem" image="Info-Icon" id="i0c-tr-1tC">
+                            <connections>
+                                <action selector="showInfoButtonTipSelector:" destination="vXZ-lx-hvc" id="fkY-8S-v8Y"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="colorSlider1" destination="tm2-z4-763" id="SWK-ew-AKQ"/>
@@ -488,7 +493,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="oRT-Fx-JuV">
-                        <barButtonItem key="rightBarButtonItem" image="Info-Icon" id="BIx-8I-jca"/>
+                        <barButtonItem key="rightBarButtonItem" image="Info-Icon" id="BIx-8I-jca">
+                            <connections>
+                                <action selector="showInfoButtonTipSelector:" destination="oB6-WC-ClM" id="8FD-bx-qfG"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="5Er-tN-fdw" id="rwG-rh-mef"/>
@@ -528,7 +537,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="qQD-eL-gE7">
-                        <barButtonItem key="rightBarButtonItem" image="Info-Icon" id="a34-lc-oEZ"/>
+                        <barButtonItem key="rightBarButtonItem" image="Info-Icon" id="a34-lc-oEZ">
+                            <connections>
+                                <action selector="showInfoButtonTipSelector:" destination="2KI-fO-8HL" id="9uM-mI-elk"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="cnn-4s-7rc" id="KRp-ek-bIr"/>
@@ -632,7 +645,11 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="f3W-EK-MRM">
-                        <barButtonItem key="rightBarButtonItem" image="Info-Icon" id="exj-WY-1xN"/>
+                        <barButtonItem key="rightBarButtonItem" image="Info-Icon" id="exj-WY-1xN">
+                            <connections>
+                                <action selector="showInfoButtonTipSelector:" destination="7yp-f8-hdg" id="ckl-Ca-Qiz"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>

@@ -93,6 +93,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)showInfoButtonTipSelector:(id)sender {
+    [tipsMethodsClassInstance showInfoButtonTipWithTipNumber:0
+                                            inViewController:self];
+}
+
 - (void)singleTapGestureSelector:(id)sender {
     CGPoint tapLocation = [singleTapGesture locationInView:self.colorExtractorImageView];
     

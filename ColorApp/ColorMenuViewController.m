@@ -19,16 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     tipsMethodsClassInstance = [[TipsMethods alloc] init];
-    
-    //[tipsMethodsClassInstance showTipOfTheDayFromViewController:self];
-    //[tipsMethodsClassInstance showStarterTipFromViewController:self];
-    //singleTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTapGestureSelector:)];
-    /*UITapGestureRecognizer *infoButtonTapGesture =
-    [[UITapGestureRecognizer alloc] initWithTarget:self
-                                            action:@selector(showInfoButtonTipSelector:)];
-    [self.infoBarButton addG]
-    [self.colorExtractorImageView addGestureRecognizer:singleTapGesture];*/
-    
+    [tipsMethodsClassInstance showNewUserTipFromViewController:self];
 }// end viewDidLoad
 
 - (IBAction)showInfoButtonTipSelector:(id)sender {
@@ -40,18 +31,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-- (UIStatusBarStyle) preferredStatusBarStyle {
-    return UIStatusBarStyleLightContent;
-}
-
-
-/*#pragma mark -- Navigation methods
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- 
-}*/
 
 - (IBAction)colorExtractorButtonSingleTapped:(id)sender {
     UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
