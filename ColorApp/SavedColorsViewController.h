@@ -10,6 +10,7 @@
 #import "AppDelegate.h"
 #import "SavedColorsTableViewCell.h"
 #import "TipsMethods.h"
+#import "DatabaseMethods.h"
 #import "Constants.h"
 
 @interface SavedColorsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>

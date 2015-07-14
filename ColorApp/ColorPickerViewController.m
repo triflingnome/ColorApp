@@ -12,6 +12,7 @@
     NSMutableArray *colorSwatchViews;
     NSInteger selectedColorSwatchView;
     TipsMethods *tipsMethodsClassInstance;
+    DatabaseMethods *databaseMethodsClassInstance;
 }
 
 @end
@@ -22,6 +23,7 @@
     [super viewDidLoad];
     self.title = COLOR_PICKER_TITLE;
     tipsMethodsClassInstance = [[TipsMethods alloc] init];
+    databaseMethodsClassInstance = [[DatabaseMethods alloc] init];
     
     selectedColorSwatchView = 0;
     
@@ -206,18 +208,18 @@
                                    NSLog(@"Save action");
                                    if ([hueNameTextField.text isEqualToString:@""]) {
                                        NSLog(@"use default name");
-                                       [self saveHueToDatabaseWithName:@"Hue"
-                                                                RedVal:self.colorSlider1.value
-                                                              GreenVal:self.colorSlider2.value
-                                                               BlueVal:self.colorSlider3.value
-                                                              AlphaVal:self.colorSlider4.value];
+                                       [databaseMethodsClassInstance saveHueToDatabaseWithName:@"Hue"
+                                                                                        RedVal:self.colorSlider1.value
+                                                                                      GreenVal:self.colorSlider2.value
+                                                                                       BlueVal:self.colorSlider3.value
+                                                                                      AlphaVal:self.colorSlider4.value];
                                    } else {
                                        NSLog(@"%@", hueNameTextField.text);
-                                       [self saveHueToDatabaseWithName:hueNameTextField.text
-                                                                RedVal:self.colorSlider1.value
-                                                              GreenVal:self.colorSlider2.value
-                                                               BlueVal:self.colorSlider3.value
-                                                              AlphaVal:self.colorSlider4.value];
+                                       [databaseMethodsClassInstance saveHueToDatabaseWithName:hueNameTextField.text
+                                                                                        RedVal:self.colorSlider1.value
+                                                                                      GreenVal:self.colorSlider2.value
+                                                                                       BlueVal:self.colorSlider3.value
+                                                                                      AlphaVal:self.colorSlider4.value];
                                    }
                                }];
     
@@ -226,25 +228,6 @@
     
     [self presentViewController:alertController animated:YES completion:nil];
 }
-
-- (void)saveHueToDatabaseWithName:(NSString *)name
-                           RedVal:(float)redval
-                         GreenVal:(float)greenval
-                          BlueVal:(float)blueval
-                         AlphaVal:(float)alphaval {
-    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
-    NSManagedObjectContext *context = [appDelegate managedObjectContext];
-    NSManagedObject *newHue;
-    newHue = [NSEntityDescription insertNewObjectForEntityForName:@"Hue" inManagedObjectContext:context];
-    [newHue setValue:name forKey:@"name"];
-    [newHue setValue:[NSNumber numberWithFloat:redval] forKey:@"redval"];
-    [newHue setValue:[NSNumber numberWithFloat:greenval] forKey:@"greenval"];
-    [newHue setValue:[NSNumber numberWithFloat:blueval] forKey:@"blueval"];
-    [newHue setValue:[NSNumber numberWithFloat:alphaval] forKey:@"alphaval"];
-    
-    NSError *error;
-    [context save:&error];
-}// end saveHueToDatabaseWith ...
 
 #pragma mark -- LoadColorDelegate protocol method
 

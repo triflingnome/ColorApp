@@ -10,6 +10,7 @@
 
 @interface SavedColorsViewController () {
     TipsMethods *tipsMethodsClassInstance;
+    DatabaseMethods *databaseMethodsClassInstance;
 }
 
 @property (strong, nonatomic) NSMutableArray *name;
@@ -25,6 +26,7 @@
     [super viewDidLoad];
     self.title = SAVED_COLORS_TITLE;
     tipsMethodsClassInstance = [[TipsMethods alloc] init];
+    databaseMethodsClassInstance = [[DatabaseMethods alloc] init];
     
     self.name = [[NSMutableArray alloc] init];
     self.redval = [[NSMutableArray alloc] init];
@@ -115,11 +117,11 @@
     NSLog(@"Name: %@", [self.name objectAtIndex:indexPathRow]);
     
     // remove Entity from database with name self.name objectAtIndex:indexPathRow
-    [self removeHueFromDatabaseWithName:[self.name objectAtIndex:indexPathRow]
-                                 RedVal:[[self.redval objectAtIndex:indexPathRow] floatValue]
-                               GreenVal:[[self.greenval objectAtIndex:indexPathRow] floatValue]
-                                BlueVal:[[self.blueval objectAtIndex:indexPathRow] floatValue]
-                               AlphaVal:[[self.alphaval objectAtIndex:indexPathRow] floatValue]];
+    [databaseMethodsClassInstance removeHueFromDatabaseWithName:[self.name objectAtIndex:indexPathRow]
+                                                         RedVal:[[self.redval objectAtIndex:indexPathRow] floatValue]
+                                                       GreenVal:[[self.greenval objectAtIndex:indexPathRow] floatValue]
+                                                        BlueVal:[[self.blueval objectAtIndex:indexPathRow] floatValue]
+                                                       AlphaVal:[[self.alphaval objectAtIndex:indexPathRow] floatValue]];
     
     // remove hue's values from name, rgbaval arrays
     [self.name removeObjectAtIndex:indexPathRow];
@@ -131,39 +133,5 @@
     // reload tableview excluding just deleted hue
     [self.tableView reloadData];
 }// deleteHue
-
-- (void)removeHueFromDatabaseWithName:(NSString *)name
-                               RedVal:(float)redval
-                             GreenVal:(float)greenval
-                              BlueVal:(float)blueval
-                             AlphaVal:(float)alphaval {
-    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
-    NSManagedObjectContext *context = [appDelegate managedObjectContext];
-    
-    NSEntityDescription *hueEntity = [NSEntityDescription entityForName:@"Hue" inManagedObjectContext:context];
-    NSFetchRequest *fetch = [[NSFetchRequest alloc] init];
-    [fetch setEntity:hueEntity];
-    
-    //[NSPredicate predicateWithFormat:@"(name = %@)", @"Hue"]
-    NSPredicate *namePred = [NSPredicate predicateWithFormat:@"(name == %@)", name];
-    NSPredicate *redValPred = [NSPredicate predicateWithFormat:@"(redval == %f)", redval];
-    NSPredicate *greenValPred = [NSPredicate predicateWithFormat:@"(greenval == %f)", greenval];
-    NSPredicate *blueValPred = [NSPredicate predicateWithFormat:@"(blueval == %f)", blueval];
-    NSPredicate *alphaValPred = [NSPredicate predicateWithFormat:@"(alphaval == %f)", alphaval];
-    
-    NSArray *predicateCollection = [NSArray arrayWithObjects:namePred, redValPred, greenValPred, blueValPred, alphaValPred, nil];
-    NSPredicate *compoundedPred = [NSCompoundPredicate andPredicateWithSubpredicates:predicateCollection];
-    [fetch setPredicate:compoundedPred];
-    
-    NSError *fetchError;
-    NSArray *fetchedHues = [context executeFetchRequest:fetch error:&fetchError];
-    
-    for (NSManagedObject *hue in fetchedHues) {
-        [context deleteObject:hue];
-    }// end for
-
-    NSError* saveError = nil;
-    [context save:&saveError];
-}// end removeHueFromDatabaseWithName:
 
 @end
