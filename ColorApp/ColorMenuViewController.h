@@ -14,4 +14,6 @@
 
 @interface ColorMenuViewController : UIViewController <UIImagePickerControllerDelegate>
 
+@property (nonatomic) IBOutlet UIBarButtonItem *infoBarButton;
+
 @end

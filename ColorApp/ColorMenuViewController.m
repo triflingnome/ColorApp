@@ -20,9 +20,21 @@
     [super viewDidLoad];
     tipsMethodsClassInstance = [[TipsMethods alloc] init];
     
-    [tipsMethodsClassInstance showTipOfTheDayFromViewController:self];
-    [tipsMethodsClassInstance showStarterTipFromViewController:self];
+    //[tipsMethodsClassInstance showTipOfTheDayFromViewController:self];
+    //[tipsMethodsClassInstance showStarterTipFromViewController:self];
+    //singleTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTapGestureSelector:)];
+    /*UITapGestureRecognizer *infoButtonTapGesture =
+    [[UITapGestureRecognizer alloc] initWithTarget:self
+                                            action:@selector(showInfoButtonTipSelector:)];
+    [self.infoBarButton addG]
+    [self.colorExtractorImageView addGestureRecognizer:singleTapGesture];*/
+    
 }// end viewDidLoad
+
+- (IBAction)showInfoButtonTipSelector:(id)sender {
+    [tipsMethodsClassInstance showInfoButtonTipWithTipNumber:0
+                                            inViewController:self];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

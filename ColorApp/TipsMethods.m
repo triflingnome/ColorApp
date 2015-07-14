@@ -9,7 +9,7 @@
 #import "TipsMethods.h"
 
 @interface TipsMethods () {
-    NSArray *tipsOfTheDay;
+    NSArray *tips;
 }
 
 @end
@@ -18,7 +18,7 @@
 
 - (id)init {
     if (self = [super init]) {
-        
+        tips = [NSArray arrayWithObjects:@"Tip 1", @"Tip 2", @"Tip 3", @"Tip 4", nil];
     }
     
     return self;
@@ -67,5 +67,27 @@
     }// end if
     
 }// end showTipOfTheDay
+
+- (void)showInfoButtonTipWithTipNumber:(int)i inViewController:(UIViewController *)vc {
+    UIAlertController *infoButtonTip = [UIAlertController alertControllerWithTitle:@"Helpful Tip"
+                                                                           message:tips[i]
+                                                                    preferredStyle:UIAlertControllerStyleAlert];
+    
+    if (i < [tips count] - 1) {
+        UIAlertAction *nextTipAction = [UIAlertAction actionWithTitle:@"Next tip..."
+                                                                style:UIAlertActionStyleDefault
+                                                              handler:^(UIAlertAction *action) {
+                                                                  [self showInfoButtonTipWithTipNumber:i+1
+                                                                                      inViewController:vc];
+                                                              }];
+        [infoButtonTip addAction:nextTipAction];
+    }
+    
+    UIAlertAction *thanksAction = [UIAlertAction actionWithTitle:@"Thanks for the help"
+                                                           style:UIAlertActionStyleCancel
+                                                         handler:nil];
+    [infoButtonTip addAction:thanksAction];
+    [vc presentViewController:infoButtonTip animated:YES completion:nil];
+}// end showInfoButtonTipWithTipNumber: inViewController:
 
 @end

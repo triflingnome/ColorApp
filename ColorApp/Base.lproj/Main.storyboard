@@ -84,6 +84,9 @@
                             <constraint firstItem="2YG-is-mfn" firstAttribute="leading" secondItem="PC7-vn-7sI" secondAttribute="leadingMargin" id="wqP-US-Whz"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="cer-A1-4xv">
+                        <barButtonItem key="rightBarButtonItem" image="Info-Icon" id="qyV-1r-Hh1"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="starterTipsSwitch" destination="I6s-kb-idc" id="qIO-q9-s0w"/>
                         <outlet property="tipOfTheDaySwtich" destination="MPc-YP-FsV" id="56T-hd-ZBU"/>
@@ -173,12 +176,20 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="clb-ue-jYm">
-                        <barButtonItem key="leftBarButtonItem" image="Options-Icon" id="MaK-qs-VQR">
+                        <barButtonItem key="leftBarButtonItem" image="Options-Icon" id="MaK-qs-VQR" userLabel="Options Bar Button">
                             <connections>
                                 <segue destination="abS-QG-aUu" kind="show" id="Lcx-gU-cmN"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="Info-Icon" id="g0M-dO-NCL" userLabel="Info Bar Button">
+                            <connections>
+                                <action selector="showInfoButtonTipSelector:" destination="Ox9-J7-pXq" id="ogf-8X-h41"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="infoBarButton" destination="g0M-dO-NCL" id="cja-hc-Btq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ytv-0Q-Pqu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -415,6 +426,9 @@
                             <constraint firstItem="B7E-aJ-8BZ" firstAttribute="top" secondItem="Vmi-ao-gaX" secondAttribute="bottom" constant="11" id="zdP-lr-ldU"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="aJt-4O-W33">
+                        <barButtonItem key="rightBarButtonItem" image="Info-Icon" id="i0c-tr-1tC"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="colorSlider1" destination="tm2-z4-763" id="SWK-ew-AKQ"/>
                         <outlet property="colorSlider2" destination="Cca-tZ-kbq" id="jvn-Jd-IPB"/>
@@ -473,6 +487,9 @@
                             <constraint firstItem="5Er-tN-fdw" firstAttribute="top" secondItem="CTc-8c-yOF" secondAttribute="bottom" constant="-64" id="fKA-UK-aLI"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="oRT-Fx-JuV">
+                        <barButtonItem key="rightBarButtonItem" image="Info-Icon" id="BIx-8I-jca"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="5Er-tN-fdw" id="rwG-rh-mef"/>
                     </connections>
@@ -510,6 +527,9 @@
                             <constraint firstItem="cnn-4s-7rc" firstAttribute="top" secondItem="Cla-HN-dzn" secondAttribute="bottom" constant="-64" id="pMd-nx-xCI"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="qQD-eL-gE7">
+                        <barButtonItem key="rightBarButtonItem" image="Info-Icon" id="a34-lc-oEZ"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="cnn-4s-7rc" id="KRp-ek-bIr"/>
                     </connections>
@@ -611,6 +631,9 @@
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" id="f3W-EK-MRM">
+                        <barButtonItem key="rightBarButtonItem" image="Info-Icon" id="exj-WY-1xN"/>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="colorExtractorImageView" destination="Mxv-Uq-rIn" id="R1H-Ug-pg5"/>
@@ -645,6 +668,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Info-Icon" width="60" height="60"/>
         <image name="Options-Icon" width="60" height="60"/>
     </resources>
 </document>
