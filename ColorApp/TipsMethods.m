@@ -25,7 +25,7 @@
 - (id)init {
     if (self = [super init]) {
         sampleTips = [NSArray arrayWithObjects:@"Tip 1", @"Tip 2", @"Tip 3", @"Tip 4", nil];
-        colorMenuTips = [NSArray arrayWithObjects:COLOR_MENU_TIP_1, COLOR_MENU_TIP_2, COLOR_MENU_TIP_3, COLOR_MENU_TIP_4, nil];
+        colorMenuTips = [NSArray arrayWithObjects:COLOR_MENU_TIP_1, COLOR_MENU_TIP_2, COLOR_MENU_TIP_3/*, COLOR_MENU_TIP_4*/, nil];
         colorPickerTips = [NSArray arrayWithObjects:COLOR_PICKER_TIP_1, COLOR_PICKER_TIP_2, COLOR_PICKER_TIP_3, COLOR_PICKER_TIP_4, nil];
         colorExtractorTips = [NSArray arrayWithObjects:COLOR_EXTRACTOR_TIP_1, COLOR_EXTRACTOR_TIP_2, COLOR_EXTRACTOR_TIP_3, nil];
         savedColorsTips = [NSArray arrayWithObjects:SAVED_COLORS_TIP_1, SAVED_COLORS_TIP_2, nil];

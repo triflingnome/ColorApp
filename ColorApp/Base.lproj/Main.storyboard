@@ -180,7 +180,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="clb-ue-jYm">
-                        <barButtonItem key="leftBarButtonItem" image="Options-Icon" id="MaK-qs-VQR" userLabel="Options Bar Button">
+                        <barButtonItem key="leftBarButtonItem" enabled="NO" id="MaK-qs-VQR" userLabel="Options Bar Button">
                             <connections>
                                 <segue destination="abS-QG-aUu" kind="show" id="Lcx-gU-cmN"/>
                             </connections>
@@ -686,6 +686,5 @@
     </scenes>
     <resources>
         <image name="Info-Icon" width="60" height="60"/>
-        <image name="Options-Icon" width="60" height="60"/>
     </resources>
 </document>
