@@ -5,11 +5,13 @@
 //  Created by Michael Berg on 7/1/15.
 //  Copyright (c) 2015 Michael Berg. All rights reserved.
 //
+//  Custom class whose super class is UITableViewCell so I could customize the
+//  cell to specifications
 
 #import "SavedColorsTableViewCell.h"
-#define ANIMATION_DURATION 0.5f
-#define CELL_ADJUST -100
-#define ANIMATION_DELAY 0.0f
+#define ANIMATION_DURATION 0.5f // in class constant for how long the cell's movement would take
+#define CELL_ADJUST -100 // in class constant for how far the cell displaces
+#define ANIMATION_DELAY 0.0f // in class constant for any delay before animation
 
 @implementation SavedColorsTableViewCell {
     Boolean topViewAdjusted;
@@ -21,6 +23,8 @@
     NSLayoutConstraint *adjustedTopViewTrailingSpaceLayoutConstraint;
 }
 
+// the cell adjusts its position on the screen by changing the LayoutConstraints and move it
+// to a new position and animation the change, simulating a the cell sliding left or right
 - (void)awakeFromNib {
     // Initialization code
     topViewAdjusted = false;
@@ -41,6 +45,7 @@
     // Configure the view for the selected state
 }
 
+// switches out constraints declared further up to either move the cell to the left or right
 - (IBAction)moveTopViewButtonTapped:(id)sender {
     if (!topViewAdjusted) {
         self.moveTopViewButton.highlighted = true;

@@ -5,6 +5,8 @@
 //  Created by Michael Berg on 6/22/15.
 //  Copyright (c) 2015 Michael Berg. All rights reserved.
 //
+//  This screen shows the user all their saved colors and allows them to delete any color
+//  they wish. SavedColorTableViewCell is used for this screen's table view
 
 #import "SavedColorsViewController.h"
 
@@ -22,6 +24,8 @@
 @end
 
 @implementation SavedColorsViewController
+
+// fetches all hues from the phone's database and populates it with their values
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = SAVED_COLORS_TITLE;
@@ -110,6 +114,7 @@
 
 #pragma mark -- SavedColorsTableViewCell methods
 
+// this selector is triggered whenever a the delete action is tapped for a table view cell
 - (IBAction)deleteHue:(id)sender {
     UIButton *btn = (UIButton *)sender;
     NSInteger indexPathRow = btn.tag;

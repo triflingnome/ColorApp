@@ -5,6 +5,8 @@
 //  Created by Michael Berg on 6/22/15.
 //  Copyright (c) 2015 Michael Berg. All rights reserved.
 //
+//  The root screen of the navigation controller which allows for accessing the other
+//  screens in the app
 
 #import "ColorMenuViewController.h"
 
@@ -19,7 +21,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     tipsMethodsClassInstance = [[TipsMethods alloc] init];
-    [tipsMethodsClassInstance showNewUserTipFromViewController:self];
+    [tipsMethodsClassInstance showNewUserTipFromViewController:self];// tips that only displays once,
+                                                                     // informing them of the tip system
 }// end viewDidLoad
 
 - (IBAction)showInfoButtonTipSelector:(id)sender {
@@ -32,6 +35,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+// query's the user to pick an image source they want to get colors from
 - (IBAction)colorExtractorButtonSingleTapped:(id)sender {
     UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
     imagePicker.delegate = self;
@@ -71,6 +75,7 @@
 
 #pragma mark -- UIImagePickerViewController delegate methods
 
+// after the image source has been determined, that data is sent to the ColorExtractorVC to be worked with
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     // Code here to work with media
     NSString *mediaType = info[UIImagePickerControllerMediaType];

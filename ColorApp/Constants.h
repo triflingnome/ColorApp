@@ -5,6 +5,8 @@
 //  Created by Michael Berg on 7/7/15.
 //  Copyright (c) 2015 Michael Berg. All rights reserved.
 //
+//  Variables with unchanging values are declared and listed here for easy use throughout
+//  the rest of the app
 
 #import <Foundation/Foundation.h>
 

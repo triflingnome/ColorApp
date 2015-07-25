@@ -5,6 +5,8 @@
 //  Created by Michael Berg on 7/6/15.
 //  Copyright (c) 2015 Michael Berg. All rights reserved.
 //
+//  This screen allows users to get color values from an image by tapping
+//  different parts of the image
 
 #import <UIKit/UIKit.h>
 #import "ColorMethods.h"

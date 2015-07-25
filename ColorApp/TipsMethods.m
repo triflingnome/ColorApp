@@ -5,10 +5,13 @@
 //  Created by Michael Berg on 7/6/15.
 //  Copyright (c) 2015 Michael Berg. All rights reserved.
 //
+//  Contains methods for showing helpful tips that enable to user to more fully
+//  use the features of the app
 
 #import "TipsMethods.h"
 
 @interface TipsMethods () {
+    // each array holds constant strings declared in Constants
     NSArray *sampleTips;
     NSArray *colorMenuTips;
     NSArray *colorPickerTips;
@@ -36,6 +39,8 @@
     return self;
 }
 
+// Displays a UIAlertController, notifying the user that about the tip system present throughtout the
+// app to guide and inform the user
 - (void)showNewUserTipFromViewController:(UIViewController *)vc {
     if ([[NSUserDefaults standardUserDefaults] boolForKey:USER_DEFAULT_SHOW_NEW_USER_TIP]) {
         // show alertcontroller
@@ -54,9 +59,12 @@
     }// end if
 }// end showNewUserTipFromViewController:
 
+// Shows a UIAlertController that can display more tips but recursively calling itself. Enabling one
+// method call to show multiple separate instances of UIAlertController and tips
 - (void)showInfoButtonTipWithTipNumber:(int)i inViewController:(UIViewController *)vc {
     NSArray *tips;
     
+    // acquires the appropriate array of tip strings based on the current view controller being interacted with
     if ([vc.title isEqualToString:COLOR_PICKER_TITLE]) {
         tips = colorPickerTips;
     } else if ([vc.title isEqualToString:SAVED_COLORS_TITLE]) {
@@ -79,6 +87,7 @@
         UIAlertAction *nextTipAction = [UIAlertAction actionWithTitle:@"Next tip..."
                                                                 style:UIAlertActionStyleDefault
                                                               handler:^(UIAlertAction *action) {
+                                                                  // recursive call to show the next tip in the array
                                                                   [self showInfoButtonTipWithTipNumber:i+1
                                                                                       inViewController:vc];
                                                               }];

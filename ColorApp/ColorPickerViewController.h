@@ -5,6 +5,8 @@
 //  Created by Michael Berg on 6/5/15.
 //  Copyright (c) 2015 Michael Berg. All rights reserved.
 //
+//  This screen allows for users to generate their own colors by manipulating
+//  numerical values
 
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"

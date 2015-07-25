@@ -5,6 +5,8 @@
 //  Created by Michael Berg on 6/5/15.
 //  Copyright (c) 2015 Michael Berg. All rights reserved.
 //
+//  This screen allows for users to generate their own colors by manipulating
+//  numerical values
 
 #import "ColorPickerViewController.h"
 
@@ -19,6 +21,7 @@
 
 @implementation ColorPickerViewController
 
+// sets default values for the color sliders and the color swatches
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = COLOR_PICKER_TITLE;
@@ -77,6 +80,7 @@
                                             inViewController:self];
 }
 
+// sets the background color to the current values of the sliders
 - (void)updateColorSwatchView {
     UIView *colorSwatchToUpdate = [colorSwatchViews objectAtIndex:selectedColorSwatchView];
     colorSwatchToUpdate.backgroundColor = [UIColor colorWithRed:self.colorSlider1.value/255.f green:self.colorSlider2.value/255.f blue:self.colorSlider3.value/255.f alpha:self.colorSlider4.value/100.f];
@@ -85,6 +89,7 @@
 
 #pragma mark - UISlider sliderValueChanged methods
 
+// these methods update onscreen elements to give the user feedback
 - (IBAction)colorSlider1ValueChanged:(id)sender {
     self.colorSliderValueLabel1.text = [NSString stringWithFormat:@"%d", (int)self.colorSlider1.value];
     [self updateColorSwatchView];
@@ -135,6 +140,7 @@
 
 #pragma mark -- UIView colorSwatchView methods
 
+// these methods give the user feedback, showing which color swatch they have selected
 - (void)colorSwatchView1Selected:(UITapGestureRecognizer *)gestureRecognizer {
     [self unselectAllColorSwatchViews];
     
@@ -178,7 +184,8 @@
     }
 }
 
-
+// Presents a UIAlertController allowing the user to give their new color a name
+// before saving it to the phone
 - (IBAction)saveHue:(id)sender {
     UIAlertController *alertController = [UIAlertController
                                           alertControllerWithTitle:@"Save Hue"
@@ -231,6 +238,7 @@
 
 #pragma mark -- LoadColorDelegate protocol method
 
+// values returned from the LoadColorVC
 - (void)returnHueValues:(float *)hueValues {
     NSLog(@"returnHueValues triggered");
     

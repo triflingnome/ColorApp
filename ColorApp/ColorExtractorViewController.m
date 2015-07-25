@@ -5,6 +5,8 @@
 //  Created by Michael Berg on 7/6/15.
 //  Copyright (c) 2015 Michael Berg. All rights reserved.
 //
+//  This screen allows users to get color values from an image by tapping
+//  different parts of the image
 
 #import "ColorExtractorViewController.h"
 
@@ -27,6 +29,7 @@
 
 @implementation ColorExtractorViewController
 
+// sets default values for swatches and color value arrays
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = COLOR_EXTRACTOR_TITLE;
@@ -97,6 +100,8 @@
                                             inViewController:self];
 }
 
+// Point in image sent to the colorOfPoint method in ColorMethods class to determine the red, green, blue, alpha values
+// at that point
 - (void)singleTapGestureSelector:(id)sender {
     CGPoint tapLocation = [singleTapGesture locationInView:self.colorExtractorImageView];
     
@@ -115,6 +120,7 @@
                                                                   alpha:alphaVals[selectedColorPaneSwatchView]/100.f];
 }// end singleTapGestureSelector:
 
+// allows the user to give their newly saved color a name before adding it to the phone's database
 - (IBAction)colorPaneSaveColorButtonSingleTapAction:(id)sender {
     UIAlertController *alertController = [UIAlertController
                                           alertControllerWithTitle:@"Save Hue"
@@ -167,6 +173,7 @@
 
 #pragma mark -- Hue Pane Swatch View Methods
 
+// these methods give feedback to the user, showing which color swatch is selected
 - (void)colorPaneSwatchView1Selected:(UITapGestureRecognizer *)gestureRecognizer {
     [self unselectAllColorPaneSwatchViews];
     
