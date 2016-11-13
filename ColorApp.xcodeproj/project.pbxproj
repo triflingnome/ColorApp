@@ -151,12 +151,12 @@
 		B49B985F1B22162300176FA6 = {
 			isa = PBXGroup;
 			children = (
-				B40B48711DD7F82F009F6E9C /* HueHarnesser */,
-				B4A3D6B91B4C28AA00C701BE /* MobileCoreServices.framework */,
-				B4D2B2EC1B38965700049922 /* CoreData.framework */,
 				B49B986A1B22162300176FA6 /* ColorApp */,
+				B40B48711DD7F82F009F6E9C /* HueHarnesser */,
 				B49B98841B22162400176FA6 /* ColorAppTests */,
 				B49B98691B22162300176FA6 /* Products */,
+				B4A3D6B91B4C28AA00C701BE /* MobileCoreServices.framework */,
+				B4D2B2EC1B38965700049922 /* CoreData.framework */,
 			);
 			sourceTree = "<group>";
 		};
