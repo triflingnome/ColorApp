@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B40B48751DD7F889009F6E9C /* Placeholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40B48741DD7F889009F6E9C /* Placeholder.swift */; };
 		B49738781B41DAFE00E09E5E /* LoadColorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B49738771B41DAFE00E09E5E /* LoadColorViewController.m */; };
 		B499DB5E1B443EFC006E174A /* LoadColorTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B499DB5C1B443EFC006E174A /* LoadColorTableViewCell.m */; };
 		B499DB5F1B443EFC006E174A /* LoadColorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B499DB5D1B443EFC006E174A /* LoadColorTableViewCell.xib */; };
@@ -44,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B40B48731DD7F888009F6E9C /* ColorApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ColorApp-Bridging-Header.h"; path = "ViewControllers/ColorApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		B40B48741DD7F889009F6E9C /* Placeholder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Placeholder.swift; sourceTree = "<group>"; };
 		B49738761B41DAFE00E09E5E /* LoadColorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadColorViewController.h; sourceTree = "<group>"; };
 		B49738771B41DAFE00E09E5E /* LoadColorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadColorViewController.m; sourceTree = "<group>"; };
 		B499DB5B1B443EFC006E174A /* LoadColorTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadColorTableViewCell.h; sourceTree = "<group>"; };
@@ -108,6 +111,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B40B48711DD7F82F009F6E9C /* HueHarnesser */ = {
+			isa = PBXGroup;
+			children = (
+				B40B48721DD7F865009F6E9C /* ViewControllers */,
+				B40B48731DD7F888009F6E9C /* ColorApp-Bridging-Header.h */,
+			);
+			path = HueHarnesser;
+			sourceTree = "<group>";
+		};
+		B40B48721DD7F865009F6E9C /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B40B48741DD7F889009F6E9C /* Placeholder.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		B499DB591B443EC5006E174A /* SavedColorsTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -131,6 +151,7 @@
 		B49B985F1B22162300176FA6 = {
 			isa = PBXGroup;
 			children = (
+				B40B48711DD7F82F009F6E9C /* HueHarnesser */,
 				B4A3D6B91B4C28AA00C701BE /* MobileCoreServices.framework */,
 				B4D2B2EC1B38965700049922 /* CoreData.framework */,
 				B49B986A1B22162300176FA6 /* ColorApp */,
@@ -278,6 +299,7 @@
 					B49B98671B22162300176FA6 = {
 						CreatedOnToolsVersion = 6.3.1;
 						DevelopmentTeam = PPB5EHNJFQ;
+						LastSwiftMigration = 0810;
 					};
 					B49B98801B22162400176FA6 = {
 						CreatedOnToolsVersion = 6.3.1;
@@ -347,6 +369,7 @@
 				B4A3D6A71B4B499000C701BE /* ColorExtractorViewController.m in Sources */,
 				B4A3D6AB1B4B49C000C701BE /* ColorMethods.m in Sources */,
 				B4A3D6AE1B4B50E000C701BE /* DatabaseMethods.m in Sources */,
+				B40B48751DD7F889009F6E9C /* Placeholder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,12 +495,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ColorApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "HueHarnesser/ViewControllers/ColorApp-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -485,18 +512,22 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ColorApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "HueHarnesser/ViewControllers/ColorApp-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
 		B49B988F1B22162400176FA6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -516,6 +547,7 @@
 		B49B98901B22162400176FA6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
