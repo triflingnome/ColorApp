@@ -225,7 +225,7 @@
 				B4A3D6BE1B4C4D2B00C701BE /* Constants.h */,
 				B4A3D6BF1B4C4D2B00C701BE /* Constants.m */,
 			);
-			name = SupportMethods;
+			path = SupportMethods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
