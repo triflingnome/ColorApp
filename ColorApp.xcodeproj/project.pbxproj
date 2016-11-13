@@ -115,7 +115,7 @@
 				B499DB611B44493D006E174A /* SavedColorsTableViewCell.m */,
 				B499DB621B44493D006E174A /* SavedColorsTableViewCell.xib */,
 			);
-			name = SavedColorsTableViewCell;
+			path = SavedColorsTableViewCell;
 			sourceTree = "<group>";
 		};
 		B499DB5A1B443ED4006E174A /* LoadColorTableViewCell */ = {
@@ -125,7 +125,7 @@
 				B499DB5C1B443EFC006E174A /* LoadColorTableViewCell.m */,
 				B499DB5D1B443EFC006E174A /* LoadColorTableViewCell.xib */,
 			);
-			name = LoadColorTableViewCell;
+			path = LoadColorTableViewCell;
 			sourceTree = "<group>";
 		};
 		B49B985F1B22162300176FA6 = {
@@ -210,7 +210,7 @@
 				B4A3D6AF1B4B6AB700C701BE /* ColorOptionsViewController.h */,
 				B4A3D6B01B4B6AB700C701BE /* ColorOptionsViewController.m */,
 			);
-			name = ViewControllers;
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		B4A3D6A81B4B499C00C701BE /* SupportMethods */ = {
