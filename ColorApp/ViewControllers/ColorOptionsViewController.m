@@ -24,7 +24,7 @@
     tipsMethodsClassInstance = [[TipsMethods alloc] init];
     
     [self setSwitchStatesBasedOnUserDefaults];
-}// end viewDidLoad
+}
 
 - (IBAction)showInfoButtonTipSelector:(id)sender {
     [tipsMethodsClassInstance showInfoButtonTipWithTipNumber:0
@@ -38,15 +38,14 @@
         [self.starterTipsSwitch setOn:YES];
     } else {
         [self.starterTipsSwitch setOn:NO];
-    }// end if-else
+    }
     
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"ShowTipOfTheDay"]) {
         [self.tipOfTheDaySwtich setOn:YES];
     } else {
         [self.tipOfTheDaySwtich setOn:NO];
-    }// end if-else
-
-}// setSwitchStatesBasedOnUserDefaults
+    }
+}
 
 #pragma mark -- Switch State Toggled Methods
 
@@ -55,19 +54,19 @@
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"ShowStarterTips"];
     } else {
         [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"ShowStarterTips"];
-    }// end if-else
+    }
     
     [[NSUserDefaults standardUserDefaults] synchronize];
-}// end starterTipsSwitchToggled:
+}
 
 - (IBAction)tipOfTheDaySwitchToggled:(id)sender {
     if ([self.tipOfTheDaySwtich isOn]) {
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"ShowTipOfTheDay"];
     } else {
         [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"ShowTipOfTheDay"];
-    }// end if-else
+    }
     
     [[NSUserDefaults standardUserDefaults] synchronize];
-}// end tipOfTheDaySwitchToggled:
+}
 
 @end

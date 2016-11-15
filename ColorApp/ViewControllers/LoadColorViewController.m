@@ -60,15 +60,9 @@
             [self.greenval addObject:[matches valueForKey:@"greenval"]];
             [self.blueval addObject:[matches valueForKey:@"blueval"]];
             [self.alphaval addObject:[matches valueForKey:@"alphaval"]];
-        }// end for
+        }
         
-    }// end if-else
-    
-}// end viewDidLoad
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    }
 }
 
 - (IBAction)showInfoButtonTipSelector:(id)sender {
@@ -80,7 +74,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.name.count;
-}// end tableView: numberOfRowsInSection:
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *loadColorTableIdentifier = @"LoadColorTableItem";
@@ -88,10 +82,9 @@
     LoadColorTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:loadColorTableIdentifier];
     
     if (cell == nil) {
-        //cell = [[LoadColorTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:loadColorTableIdentifier];
         [tableView registerNib: [UINib nibWithNibName:@"LoadColorTableViewCell" bundle:nil] forCellReuseIdentifier:loadColorTableIdentifier];
         cell = [tableView dequeueReusableCellWithIdentifier:loadColorTableIdentifier];
-    }// end if
+    }
     
     NSInteger currentRow = indexPath.row;
     cell.hueNameLabel.text = [self.name objectAtIndex:currentRow];
@@ -101,7 +94,7 @@
                                                          alpha:[[self.alphaval objectAtIndex:currentRow] floatValue]/100.f];
     
     return cell;
-}// end tableView: cellForRowAtIndexPath:
+}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -114,15 +107,5 @@
     [self.delegate returnHueValues:hueValues];
     [self.navigationController popViewControllerAnimated:YES];
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

@@ -45,7 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B40B48731DD7F888009F6E9C /* ColorApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ColorApp-Bridging-Header.h"; path = "ViewControllers/ColorApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		B40B48731DD7F888009F6E9C /* ColorApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ColorApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		B40B48741DD7F889009F6E9C /* Placeholder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Placeholder.swift; sourceTree = "<group>"; };
 		B49738761B41DAFE00E09E5E /* LoadColorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadColorViewController.h; sourceTree = "<group>"; };
 		B49738771B41DAFE00E09E5E /* LoadColorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadColorViewController.m; sourceTree = "<group>"; };
@@ -114,18 +114,10 @@
 		B40B48711DD7F82F009F6E9C /* HueHarnesser */ = {
 			isa = PBXGroup;
 			children = (
-				B40B48721DD7F865009F6E9C /* ViewControllers */,
 				B40B48731DD7F888009F6E9C /* ColorApp-Bridging-Header.h */,
-			);
-			path = HueHarnesser;
-			sourceTree = "<group>";
-		};
-		B40B48721DD7F865009F6E9C /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
 				B40B48741DD7F889009F6E9C /* Placeholder.swift */,
 			);
-			path = ViewControllers;
+			path = HueHarnesser;
 			sourceTree = "<group>";
 		};
 		B499DB591B443EC5006E174A /* SavedColorsTableViewCell */ = {
@@ -502,7 +494,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "HueHarnesser/ViewControllers/ColorApp-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "HueHarnesser/ColorApp-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
@@ -519,7 +511,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "HueHarnesser/ViewControllers/ColorApp-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "HueHarnesser/ColorApp-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

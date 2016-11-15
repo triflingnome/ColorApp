@@ -62,16 +62,10 @@
             [self.greenval addObject:[matches valueForKey:@"greenval"]];
             [self.blueval addObject:[matches valueForKey:@"blueval"]];
             [self.alphaval addObject:[matches valueForKey:@"alphaval"]];
-        }// end for
-        
-    }// end if-else
+        }
+    }
     
     self.tableView.allowsSelection = NO;
-}// end viewDidLoad
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (IBAction)showInfoButtonTipSelector:(id)sender {
@@ -82,7 +76,6 @@
 #pragma mark -- UITableViewDelegate methods
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    //return [sampleData count];
     return self.name.count;
 }
 
@@ -94,7 +87,7 @@
     if (cell == nil) {
         [tableView registerNib:[UINib nibWithNibName:@"SavedColorsTableViewCell" bundle:nil] forCellReuseIdentifier:savedColorsTableIdentifier];
         cell = [tableView dequeueReusableCellWithIdentifier:savedColorsTableIdentifier];
-    }// end if
+    }
     
     NSInteger currentRow = indexPath.row;
     cell.hueNameLabel.text = [self.name objectAtIndex:currentRow];
@@ -137,6 +130,6 @@
     
     // reload tableview excluding just deleted hue
     [self.tableView reloadData];
-}// deleteHue
+}
 
 @end

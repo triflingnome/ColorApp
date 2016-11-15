@@ -23,24 +23,17 @@
     tipsMethodsClassInstance = [[TipsMethods alloc] init];
     [tipsMethodsClassInstance showNewUserTipFromViewController:self];// tips that only displays once,
                                                                      // informing them of the tip system
-}// end viewDidLoad
+}
 
 - (IBAction)showInfoButtonTipSelector:(id)sender {
     [tipsMethodsClassInstance showInfoButtonTipWithTipNumber:0
                                             inViewController:self];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 // query's the user to pick an image source they want to get colors from
 - (IBAction)colorExtractorButtonSingleTapped:(id)sender {
     UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
     imagePicker.delegate = self;
-    //imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-    //imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
     imagePicker.mediaTypes = @[(NSString *) kUTTypeImage];
     imagePicker.allowsEditing = YES;
     
@@ -71,13 +64,12 @@
     [actionSheetAlertController addAction:photosAction];
     
     [self presentViewController:actionSheetAlertController animated:YES completion:nil];
-}// end colorExtractorButtonSingleTapped:
+}
 
 #pragma mark -- UIImagePickerViewController delegate methods
 
 // after the image source has been determined, that data is sent to the ColorExtractorVC to be worked with
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
-    // Code here to work with media
     NSString *mediaType = info[UIImagePickerControllerMediaType];
     
     if ([mediaType isEqualToString:(NSString *)kUTTypeImage]) {
@@ -88,7 +80,7 @@
         vc.chosenImage = editedImage;
         
         [self.navigationController pushViewController:vc animated:YES];
-    }// end if
+    }
     
     [self dismissViewControllerAnimated:YES completion:nil];
 }
