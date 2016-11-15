@@ -71,6 +71,6 @@
     
     NSError* saveError = nil;
     [context save:&saveError];
-}// end removeHueFromDatabaseWithName:
+}
 
 @end

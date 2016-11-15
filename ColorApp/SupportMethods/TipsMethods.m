@@ -34,7 +34,7 @@
         savedColorsTips = [NSArray arrayWithObjects:SAVED_COLORS_TIP_1, SAVED_COLORS_TIP_2, nil];
         loadColorsTips = [NSArray arrayWithObjects:LOAD_COLORS_TIP_1, LOAD_COLORS_TIP_2, nil];
         colorOptionsTips = [NSArray arrayWithObjects:COLOR_OPTIONS_TIP_1, COLOR_OPTIONS_TIP_2, nil];
-    }// end if
+    }
     
     return self;
 }
@@ -56,8 +56,8 @@
                                                          }];
         [newUserTip addAction:okAction];
         [vc presentViewController:newUserTip animated:YES completion:nil];
-    }// end if
-}// end showNewUserTipFromViewController:
+    }
+}
 
 // Shows a UIAlertController that can display more tips but recursively calling itself. Enabling one
 // method call to show multiple separate instances of UIAlertController and tips
@@ -99,6 +99,6 @@
                                                          handler:nil];
     [infoButtonTip addAction:thanksAction];
     [vc presentViewController:infoButtonTip animated:YES completion:nil];
-}// end showInfoButtonTipWithTipNumber: inViewController:
+}
 
 @end

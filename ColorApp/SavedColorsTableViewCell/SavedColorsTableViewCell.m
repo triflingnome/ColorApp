@@ -39,12 +39,6 @@
     [self.moveTopViewButton setImage:[UIImage imageNamed:@"Collapse-Arrow"] forState:UIControlStateHighlighted];
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
-}
-
 // switches out constraints declared further up to either move the cell to the left or right
 - (IBAction)moveTopViewButtonTapped:(id)sender {
     if (!topViewAdjusted) {

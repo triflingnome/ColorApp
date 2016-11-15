@@ -68,11 +68,6 @@
     [self.colorSwatchView4 addGestureRecognizer:colorSwatchView4TapGesture];
     UITapGestureRecognizer *colorSwatchView5TapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(colorSwatchView5Selected:)];
     colorSwatchView5TapGesture.delegate = self;
-}// end viewDidLoad
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (IBAction)showInfoButtonTipSelector:(id)sender {
@@ -93,25 +88,21 @@
 - (IBAction)colorSlider1ValueChanged:(id)sender {
     self.colorSliderValueLabel1.text = [NSString stringWithFormat:@"%d", (int)self.colorSlider1.value];
     [self updateColorSwatchView];
-    //self.colorDisplay.backgroundColor = [UIColor redColor];
 }
 
 - (IBAction)colorSlider2ValueChanged:(id)sender {
     self.colorSliderValueLabel2.text = [NSString stringWithFormat:@"%d", (int)self.colorSlider2.value];
     [self updateColorSwatchView];
-    //self.colorDisplay.backgroundColor = [UIColor greenColor];
 }
 
 - (IBAction)colorSlider3ValueChanged:(id)sender {
     self.colorSliderValueLabel3.text = [NSString stringWithFormat:@"%d", (int)self.colorSlider3.value];
     [self updateColorSwatchView];
-    //self.colorDisplay.backgroundColor = [UIColor blueColor];
 }
 
 - (IBAction)colorSlider4ValueChanged:(id)sender {
     self.colorSliderValueLabel4.text = [NSString stringWithFormat:@"%d", (int)self.colorSlider4.value];
     [self updateColorSwatchView];
-    //self.colorDisplay.backgroundColor = [UIColor blackColor];
 }
 
 // typically called when a new color swatch is selected and the colorSliders need to be adjusted to
@@ -249,13 +240,14 @@
                                                           alpha:hueValues[3]/100.f];
     
     [self updateColorSliders:colorSwatchToUpdate];
-}// end returnHueValues
+}
+
+#pragma mark -- Navigation
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     
     LoadColorViewController *loadColorVC =(LoadColorViewController*)segue.destinationViewController;
     loadColorVC.delegate = self;
-    //editVC.infoString = self.infoLabel.text;
     
 }
 
