@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B40B48751DD7F889009F6E9C /* Placeholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40B48741DD7F889009F6E9C /* Placeholder.swift */; };
 		B49738781B41DAFE00E09E5E /* LoadColorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B49738771B41DAFE00E09E5E /* LoadColorViewController.m */; };
 		B499DB5E1B443EFC006E174A /* LoadColorTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B499DB5C1B443EFC006E174A /* LoadColorTableViewCell.m */; };
 		B499DB5F1B443EFC006E174A /* LoadColorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B499DB5D1B443EFC006E174A /* LoadColorTableViewCell.xib */; };
@@ -32,6 +31,7 @@
 		B4A3D6C01B4C4D2B00C701BE /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = B4A3D6BF1B4C4D2B00C701BE /* Constants.m */; };
 		B4D2B2EB1B3893D800049922 /* SavedHues.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B4D2B2E91B3893D800049922 /* SavedHues.xcdatamodeld */; };
 		B4D2B2ED1B38965700049922 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4D2B2EC1B38965700049922 /* CoreData.framework */; };
+		B4F5CF581DDB815900179F98 /* HHNavigationHandleable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F5CF571DDB815900179F98 /* HHNavigationHandleable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,7 +46,6 @@
 
 /* Begin PBXFileReference section */
 		B40B48731DD7F888009F6E9C /* ColorApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ColorApp-Bridging-Header.h"; sourceTree = "<group>"; };
-		B40B48741DD7F889009F6E9C /* Placeholder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Placeholder.swift; sourceTree = "<group>"; };
 		B49738761B41DAFE00E09E5E /* LoadColorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadColorViewController.h; sourceTree = "<group>"; };
 		B49738771B41DAFE00E09E5E /* LoadColorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadColorViewController.m; sourceTree = "<group>"; };
 		B499DB5B1B443EFC006E174A /* LoadColorTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadColorTableViewCell.h; sourceTree = "<group>"; };
@@ -89,6 +88,7 @@
 		B4A3D6BF1B4C4D2B00C701BE /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		B4D2B2EA1B3893D800049922 /* SavedHues.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SavedHues.xcdatamodel; sourceTree = "<group>"; };
 		B4D2B2EC1B38965700049922 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		B4F5CF571DDB815900179F98 /* HHNavigationHandleable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHNavigationHandleable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,8 +114,8 @@
 		B40B48711DD7F82F009F6E9C /* HueHarnesser */ = {
 			isa = PBXGroup;
 			children = (
+				B4F5CF561DDB80E200179F98 /* Foundation */,
 				B40B48731DD7F888009F6E9C /* ColorApp-Bridging-Header.h */,
-				B40B48741DD7F889009F6E9C /* Placeholder.swift */,
 			);
 			path = HueHarnesser;
 			sourceTree = "<group>";
@@ -241,6 +241,14 @@
 			path = SupportMethods;
 			sourceTree = "<group>";
 		};
+		B4F5CF561DDB80E200179F98 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				B4F5CF571DDB815900179F98 /* HHNavigationHandleable.swift */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -358,10 +366,10 @@
 				B49D156D1B38735400E7CA0F /* ColorAppNavigationController.m in Sources */,
 				B4A3D6B11B4B6AB700C701BE /* ColorOptionsViewController.m in Sources */,
 				B49738781B41DAFE00E09E5E /* LoadColorViewController.m in Sources */,
+				B4F5CF581DDB815900179F98 /* HHNavigationHandleable.swift in Sources */,
 				B4A3D6A71B4B499000C701BE /* ColorExtractorViewController.m in Sources */,
 				B4A3D6AB1B4B49C000C701BE /* ColorMethods.m in Sources */,
 				B4A3D6AE1B4B50E000C701BE /* DatabaseMethods.m in Sources */,
-				B40B48751DD7F889009F6E9C /* Placeholder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
