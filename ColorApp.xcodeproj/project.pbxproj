@@ -242,12 +242,12 @@
 			children = (
 				B4A3D6A91B4B49C000C701BE /* ColorMethods.h */,
 				B4A3D6AA1B4B49C000C701BE /* ColorMethods.m */,
+				B4A3D6BE1B4C4D2B00C701BE /* Constants.h */,
+				B4A3D6BF1B4C4D2B00C701BE /* Constants.m */,
 				B4A3D6AC1B4B50E000C701BE /* DatabaseMethods.h */,
 				B4A3D6AD1B4B50E000C701BE /* DatabaseMethods.m */,
 				B4A3D6B21B4B6C0B00C701BE /* TipsMethods.h */,
 				B4A3D6B31B4B6C0B00C701BE /* TipsMethods.m */,
-				B4A3D6BE1B4C4D2B00C701BE /* Constants.h */,
-				B4A3D6BF1B4C4D2B00C701BE /* Constants.m */,
 			);
 			path = SupportMethods;
 			sourceTree = "<group>";
