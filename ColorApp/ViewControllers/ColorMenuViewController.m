@@ -10,6 +10,8 @@
 
 #import "ColorMenuViewController.h"
 
+#import "ColorApp-Swift.h"
+
 @interface ColorMenuViewController () {
     TipsMethods *tipsMethodsClassInstance;
 }
@@ -75,11 +77,10 @@
     if ([mediaType isEqualToString:(NSString *)kUTTypeImage]) {
         UIImage *editedImage = info[UIImagePickerControllerEditedImage];
         
-        // instantiate VC in NavCon, set property to editedImage and push
-        ColorExtractorViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"ColorExtractorViewController"];
-        vc.chosenImage = editedImage;
-        
-        [self.navigationController pushViewController:vc animated:YES];
+        HHExtractorNavigationHandler *extractorNavigationHandler = [[HHExtractorNavigationHandler alloc] initWithNavigationController:self.navigationController
+                                                                                                                             animated:true image:editedImage
+                                                                                                                           storyboard:self.storyboard];
+        [extractorNavigationHandler handleNavigation];
     }
     
     [self dismissViewControllerAnimated:YES completion:nil];
