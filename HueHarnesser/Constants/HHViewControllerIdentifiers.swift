@@ -10,5 +10,6 @@
 
 enum HHViewControllerIdentifiers: String {
     case colorExtractor = "ColorExtractorViewController"
+    case colorPicker = "ColorPickerViewController"
     case loadColor = "LoadColorViewController"
 }
