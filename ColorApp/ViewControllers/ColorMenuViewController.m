@@ -68,6 +68,13 @@
     [self presentViewController:actionSheetAlertController animated:YES completion:nil];
 }
 
+- (IBAction)colorPickerButtonSingleTapped:(id)sender {
+    HHPickerNavigationHandler *pickerNavigationHandler = [[HHPickerNavigationHandler alloc] initWithNavigationController:self.navigationController
+                                                                                                                animated:true
+                                                                                                              storyboard:self.storyboard];
+    [pickerNavigationHandler handleNavigation];
+}
+
 #pragma mark -- UIImagePickerViewController delegate methods
 
 // after the image source has been determined, that data is sent to the ColorExtractorVC to be worked with
