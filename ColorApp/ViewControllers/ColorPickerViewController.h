@@ -15,7 +15,7 @@
 #import "DatabaseMethods.h"
 #import "Constants.h"
 
-@interface ColorPickerViewController : UIViewController
+@interface ColorPickerViewController : UIViewController <LoadColorDelegate>
 
 @property (nonatomic) IBOutlet UISlider *colorSlider1;// for Red or Cyan
 @property (nonatomic) IBOutlet UISlider *colorSlider2;// Green or Magenta

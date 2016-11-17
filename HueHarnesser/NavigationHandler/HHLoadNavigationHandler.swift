@@ -14,15 +14,15 @@
     
     internal let navigationController: UINavigationController
     internal let animated: Bool
-    private let loadColorDelegate: LoadColorDelegate
+    private let loadColorDelegateViewController: ColorPickerViewController
     private let storyboard: UIStoryboard
     
     // MARK: Inits
-    
-    init(navigationController: UINavigationController, animated: Bool, loadColorDelegate: LoadColorDelegate, storyboard: UIStoryboard) {
+
+    init(navigationController: UINavigationController, animated: Bool, loadColorDelegateViewController: ColorPickerViewController, storyboard: UIStoryboard) {
         self.navigationController = navigationController
         self.animated = animated
-        self.loadColorDelegate = loadColorDelegate
+        self.loadColorDelegateViewController = loadColorDelegateViewController
         self.storyboard = storyboard
     }
     
@@ -30,7 +30,7 @@
     
     func handleNavigation() {
         let loadColorViewController = storyboard.instantiateViewController(withIdentifier: HHViewControllerIdentifiers.loadColor.rawValue) as! LoadColorViewController
-        loadColorViewController.delegate = loadColorDelegate
+        loadColorViewController.delegate = loadColorDelegateViewController
         
         navigationController.pushViewController(loadColorViewController, animated: animated)
     }
