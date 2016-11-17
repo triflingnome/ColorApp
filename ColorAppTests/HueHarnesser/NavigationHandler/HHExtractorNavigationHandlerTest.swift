@@ -12,14 +12,28 @@ import XCTest
 
 class HHExtractorNavigationHandlerTest: XCTestCase {
     
-    override func setUp() {
-        super.setUp()
-        
-        // TODO: set up instance of UINavigationController here
-    }
-    
     func testHandleNavigation() {
-        XCTAssertTrue(true)
+        let navigationController = UINavigationController()
+        let animated = true
+        let image = UIImage(named: "Debug")
+        let storyboardName = Bundle.main.infoDictionary?["UIMainStoryboardFile"] as! String?
+        
+        if let actualStoryboardName = storyboardName,
+           let actualImage = image {
+            let storyboard = UIStoryboard(name: actualStoryboardName, bundle: Bundle.main)
+            
+            let extractorNavigationHandler = HHExtractorNavigationHandler(navigationController: navigationController, animated: animated, image: actualImage, storyboard: storyboard)
+            extractorNavigationHandler.handleNavigation()
+
+            let viewControllers = navigationController.viewControllers
+            if let expectedExtractorViewController = viewControllers[viewControllers.endIndex - 1] as? ColorExtractorViewController {
+                XCTAssertEqual(actualImage, expectedExtractorViewController.chosenImage)
+            } else {
+                XCTFail("expectedExtractorViewController is not of type ColorExtractorViewController")
+            }
+        } else {
+            XCTFail("main.storyboard or debug image not found")
+        }
     }
     
 }
