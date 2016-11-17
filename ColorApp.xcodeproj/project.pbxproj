@@ -18,7 +18,6 @@
 		B49B98771B22162300176FA6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B49B98751B22162300176FA6 /* Main.storyboard */; };
 		B49B98791B22162300176FA6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B49B98781B22162300176FA6 /* Images.xcassets */; };
 		B49B987C1B22162300176FA6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B49B987A1B22162300176FA6 /* LaunchScreen.xib */; };
-		B49B98881B22162400176FA6 /* ColorAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B49B98871B22162400176FA6 /* ColorAppTests.m */; };
 		B49D15641B385F7C00E7CA0F /* ColorMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B49D15631B385F7C00E7CA0F /* ColorMenuViewController.m */; };
 		B49D156D1B38735400E7CA0F /* ColorAppNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B49D156C1B38735400E7CA0F /* ColorAppNavigationController.m */; };
 		B49D15781B3889CB00E7CA0F /* SavedColorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B49D15771B3889CB00E7CA0F /* SavedColorsViewController.m */; };
@@ -32,6 +31,17 @@
 		B4D2B2EB1B3893D800049922 /* SavedHues.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B4D2B2E91B3893D800049922 /* SavedHues.xcdatamodeld */; };
 		B4D2B2ED1B38965700049922 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4D2B2EC1B38965700049922 /* CoreData.framework */; };
 		B4F5CF581DDB815900179F98 /* HHNavigationHandleable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F5CF571DDB815900179F98 /* HHNavigationHandleable.swift */; };
+		B4F5CF5B1DDD3A8500179F98 /* HHExtractorNavigationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F5CF5A1DDD3A8500179F98 /* HHExtractorNavigationHandler.swift */; };
+		B4F5CF5D1DDD3A9700179F98 /* HHPickerNavigationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F5CF5C1DDD3A9700179F98 /* HHPickerNavigationHandler.swift */; };
+		B4F5CF5F1DDD3AD600179F98 /* HHSavedNavigationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F5CF5E1DDD3AD600179F98 /* HHSavedNavigationHandler.swift */; };
+		B4F5CF611DDD3AF700179F98 /* HHLoadNavigationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F5CF601DDD3AF700179F98 /* HHLoadNavigationHandler.swift */; };
+		B4F5CF631DDD3B5C00179F98 /* HHLoadedNavigationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F5CF621DDD3B5C00179F98 /* HHLoadedNavigationHandler.swift */; };
+		B4F5CF691DDD437800179F98 /* HHViewControllerIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F5CF681DDD437800179F98 /* HHViewControllerIdentifiers.swift */; };
+		B4F5CF6E1DDE209400179F98 /* HHExtractorNavigationHandlerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F5CF6D1DDE209400179F98 /* HHExtractorNavigationHandlerTest.swift */; };
+		B4F5CF701DDE20BE00179F98 /* HHLoadNavigationHandlerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F5CF6F1DDE20BE00179F98 /* HHLoadNavigationHandlerTest.swift */; };
+		B4F5CF721DDE20E300179F98 /* HHLoadedNavigationHandlerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F5CF711DDE20E300179F98 /* HHLoadedNavigationHandlerTest.swift */; };
+		B4F5CF741DDE20F300179F98 /* HHPickerNavigationHandlerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F5CF731DDE20F300179F98 /* HHPickerNavigationHandlerTest.swift */; };
+		B4F5CF761DDE20FF00179F98 /* HHSavedNavigationHandlerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F5CF751DDE20FF00179F98 /* HHSavedNavigationHandlerTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,7 +76,6 @@
 		B49B987B1B22162300176FA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		B49B98811B22162400176FA6 /* ColorAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ColorAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B49B98861B22162400176FA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B49B98871B22162400176FA6 /* ColorAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ColorAppTests.m; sourceTree = "<group>"; };
 		B49D15621B385F7C00E7CA0F /* ColorMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorMenuViewController.h; sourceTree = "<group>"; };
 		B49D15631B385F7C00E7CA0F /* ColorMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorMenuViewController.m; sourceTree = "<group>"; };
 		B49D156B1B38735400E7CA0F /* ColorAppNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorAppNavigationController.h; sourceTree = "<group>"; };
@@ -89,6 +98,18 @@
 		B4D2B2EA1B3893D800049922 /* SavedHues.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SavedHues.xcdatamodel; sourceTree = "<group>"; };
 		B4D2B2EC1B38965700049922 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		B4F5CF571DDB815900179F98 /* HHNavigationHandleable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHNavigationHandleable.swift; sourceTree = "<group>"; };
+		B4F5CF5A1DDD3A8500179F98 /* HHExtractorNavigationHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHExtractorNavigationHandler.swift; sourceTree = "<group>"; };
+		B4F5CF5C1DDD3A9700179F98 /* HHPickerNavigationHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHPickerNavigationHandler.swift; sourceTree = "<group>"; };
+		B4F5CF5E1DDD3AD600179F98 /* HHSavedNavigationHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHSavedNavigationHandler.swift; sourceTree = "<group>"; };
+		B4F5CF601DDD3AF700179F98 /* HHLoadNavigationHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHLoadNavigationHandler.swift; sourceTree = "<group>"; };
+		B4F5CF621DDD3B5C00179F98 /* HHLoadedNavigationHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHLoadedNavigationHandler.swift; sourceTree = "<group>"; };
+		B4F5CF681DDD437800179F98 /* HHViewControllerIdentifiers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHViewControllerIdentifiers.swift; sourceTree = "<group>"; };
+		B4F5CF6C1DDE209300179F98 /* ColorAppTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ColorAppTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		B4F5CF6D1DDE209400179F98 /* HHExtractorNavigationHandlerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHExtractorNavigationHandlerTest.swift; sourceTree = "<group>"; };
+		B4F5CF6F1DDE20BE00179F98 /* HHLoadNavigationHandlerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHLoadNavigationHandlerTest.swift; sourceTree = "<group>"; };
+		B4F5CF711DDE20E300179F98 /* HHLoadedNavigationHandlerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHLoadedNavigationHandlerTest.swift; sourceTree = "<group>"; };
+		B4F5CF731DDE20F300179F98 /* HHPickerNavigationHandlerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHPickerNavigationHandlerTest.swift; sourceTree = "<group>"; };
+		B4F5CF751DDE20FF00179F98 /* HHSavedNavigationHandlerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHSavedNavigationHandlerTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +135,8 @@
 		B40B48711DD7F82F009F6E9C /* HueHarnesser */ = {
 			isa = PBXGroup;
 			children = (
+				B4F5CF671DDD433C00179F98 /* Constants */,
+				B4F5CF591DDD3A5400179F98 /* NavigationHandler */,
 				B4F5CF561DDB80E200179F98 /* Foundation */,
 				B40B48731DD7F888009F6E9C /* ColorApp-Bridging-Header.h */,
 			);
@@ -193,7 +216,8 @@
 		B49B98841B22162400176FA6 /* ColorAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				B49B98871B22162400176FA6 /* ColorAppTests.m */,
+				B4F5CF6A1DDE203600179F98 /* HueHarnesser */,
+				B4F5CF6C1DDE209300179F98 /* ColorAppTests-Bridging-Header.h */,
 				B49B98851B22162400176FA6 /* Supporting Files */,
 			);
 			path = ColorAppTests;
@@ -231,12 +255,12 @@
 			children = (
 				B4A3D6A91B4B49C000C701BE /* ColorMethods.h */,
 				B4A3D6AA1B4B49C000C701BE /* ColorMethods.m */,
+				B4A3D6BE1B4C4D2B00C701BE /* Constants.h */,
+				B4A3D6BF1B4C4D2B00C701BE /* Constants.m */,
 				B4A3D6AC1B4B50E000C701BE /* DatabaseMethods.h */,
 				B4A3D6AD1B4B50E000C701BE /* DatabaseMethods.m */,
 				B4A3D6B21B4B6C0B00C701BE /* TipsMethods.h */,
 				B4A3D6B31B4B6C0B00C701BE /* TipsMethods.m */,
-				B4A3D6BE1B4C4D2B00C701BE /* Constants.h */,
-				B4A3D6BF1B4C4D2B00C701BE /* Constants.m */,
 			);
 			path = SupportMethods;
 			sourceTree = "<group>";
@@ -247,6 +271,46 @@
 				B4F5CF571DDB815900179F98 /* HHNavigationHandleable.swift */,
 			);
 			path = Foundation;
+			sourceTree = "<group>";
+		};
+		B4F5CF591DDD3A5400179F98 /* NavigationHandler */ = {
+			isa = PBXGroup;
+			children = (
+				B4F5CF5A1DDD3A8500179F98 /* HHExtractorNavigationHandler.swift */,
+				B4F5CF601DDD3AF700179F98 /* HHLoadNavigationHandler.swift */,
+				B4F5CF621DDD3B5C00179F98 /* HHLoadedNavigationHandler.swift */,
+				B4F5CF5C1DDD3A9700179F98 /* HHPickerNavigationHandler.swift */,
+				B4F5CF5E1DDD3AD600179F98 /* HHSavedNavigationHandler.swift */,
+			);
+			path = NavigationHandler;
+			sourceTree = "<group>";
+		};
+		B4F5CF671DDD433C00179F98 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				B4F5CF681DDD437800179F98 /* HHViewControllerIdentifiers.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		B4F5CF6A1DDE203600179F98 /* HueHarnesser */ = {
+			isa = PBXGroup;
+			children = (
+				B4F5CF6B1DDE205400179F98 /* NavigationHandler */,
+			);
+			path = HueHarnesser;
+			sourceTree = "<group>";
+		};
+		B4F5CF6B1DDE205400179F98 /* NavigationHandler */ = {
+			isa = PBXGroup;
+			children = (
+				B4F5CF6D1DDE209400179F98 /* HHExtractorNavigationHandlerTest.swift */,
+				B4F5CF6F1DDE20BE00179F98 /* HHLoadNavigationHandlerTest.swift */,
+				B4F5CF711DDE20E300179F98 /* HHLoadedNavigationHandlerTest.swift */,
+				B4F5CF731DDE20F300179F98 /* HHPickerNavigationHandlerTest.swift */,
+				B4F5CF751DDE20FF00179F98 /* HHSavedNavigationHandlerTest.swift */,
+			);
+			path = NavigationHandler;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,7 +357,7 @@
 		B49B98601B22162300176FA6 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0630;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "Michael Berg";
 				TargetAttributes = {
 					B49B98671B22162300176FA6 = {
@@ -303,6 +367,7 @@
 					};
 					B49B98801B22162400176FA6 = {
 						CreatedOnToolsVersion = 6.3.1;
+						LastSwiftMigration = 0810;
 						TestTargetID = B49B98671B22162300176FA6;
 					};
 				};
@@ -356,16 +421,22 @@
 				B49B98741B22162300176FA6 /* ColorPickerViewController.m in Sources */,
 				B49D15781B3889CB00E7CA0F /* SavedColorsViewController.m in Sources */,
 				B49B98711B22162300176FA6 /* AppDelegate.m in Sources */,
+				B4F5CF5B1DDD3A8500179F98 /* HHExtractorNavigationHandler.swift in Sources */,
 				B4A3D6C01B4C4D2B00C701BE /* Constants.m in Sources */,
 				B49B986E1B22162300176FA6 /* main.m in Sources */,
+				B4F5CF611DDD3AF700179F98 /* HHLoadNavigationHandler.swift in Sources */,
 				B499DB5E1B443EFC006E174A /* LoadColorTableViewCell.m in Sources */,
 				B499DB631B44493D006E174A /* SavedColorsTableViewCell.m in Sources */,
+				B4F5CF5D1DDD3A9700179F98 /* HHPickerNavigationHandler.swift in Sources */,
 				B49D15641B385F7C00E7CA0F /* ColorMenuViewController.m in Sources */,
 				B4D2B2EB1B3893D800049922 /* SavedHues.xcdatamodeld in Sources */,
 				B4A3D6B41B4B6C0B00C701BE /* TipsMethods.m in Sources */,
 				B49D156D1B38735400E7CA0F /* ColorAppNavigationController.m in Sources */,
 				B4A3D6B11B4B6AB700C701BE /* ColorOptionsViewController.m in Sources */,
+				B4F5CF5F1DDD3AD600179F98 /* HHSavedNavigationHandler.swift in Sources */,
 				B49738781B41DAFE00E09E5E /* LoadColorViewController.m in Sources */,
+				B4F5CF631DDD3B5C00179F98 /* HHLoadedNavigationHandler.swift in Sources */,
+				B4F5CF691DDD437800179F98 /* HHViewControllerIdentifiers.swift in Sources */,
 				B4F5CF581DDB815900179F98 /* HHNavigationHandleable.swift in Sources */,
 				B4A3D6A71B4B499000C701BE /* ColorExtractorViewController.m in Sources */,
 				B4A3D6AB1B4B49C000C701BE /* ColorMethods.m in Sources */,
@@ -377,7 +448,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B49B98881B22162400176FA6 /* ColorAppTests.m in Sources */,
+				B4F5CF701DDE20BE00179F98 /* HHLoadNavigationHandlerTest.swift in Sources */,
+				B4F5CF721DDE20E300179F98 /* HHLoadedNavigationHandlerTest.swift in Sources */,
+				B4F5CF6E1DDE209400179F98 /* HHExtractorNavigationHandlerTest.swift in Sources */,
+				B4F5CF761DDE20FF00179F98 /* HHSavedNavigationHandlerTest.swift in Sources */,
+				B4F5CF741DDE20F300179F98 /* HHPickerNavigationHandlerTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,14 +499,17 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -467,8 +545,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -487,6 +567,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -500,6 +581,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ColorApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "sunstrider.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "HueHarnesser/ColorApp-Bridging-Header.h";
@@ -517,6 +599,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ColorApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "sunstrider.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "HueHarnesser/ColorApp-Bridging-Header.h";
@@ -529,6 +612,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -539,7 +623,11 @@
 				);
 				INFOPLIST_FILE = ColorAppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "sunstrider.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ColorAppTests/ColorAppTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ColorApp.app/ColorApp";
 			};
 			name = Debug;
@@ -549,13 +637,17 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = ColorAppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "sunstrider.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ColorAppTests/ColorAppTests-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ColorApp.app/ColorApp";
 			};
 			name = Release;

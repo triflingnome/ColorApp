@@ -12,7 +12,6 @@ import UIKit
  * This protocol should be adherred to by all navigation handler 
  * classes to provide a common set of:
  * - properties
- * - init
  * - methods
  * that should be present in all navigation handler classes
  */
@@ -20,10 +19,8 @@ protocol HHNavigationHandleable {
     
     var navigationController: UINavigationController { get }
     var animated: Bool { get }
-
-    init(navigationController: UINavigationController, animated: Bool)
     
     /// This instance method should be implemented to push or pop on navigationController
-    func handleNavigation(with navigationController: UINavigationController, animation: Bool)
+    func handleNavigation()
     
 }

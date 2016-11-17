@@ -10,7 +10,7 @@
 
 #import "ColorPickerViewController.h"
 
-@interface ColorPickerViewController () <LoadColorDelegate> {
+@interface ColorPickerViewController () {
     NSMutableArray *colorSwatchViews;
     NSInteger selectedColorSwatchView;
     TipsMethods *tipsMethodsClassInstance;
