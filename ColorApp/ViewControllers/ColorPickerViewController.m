@@ -10,6 +10,8 @@
 
 #import "ColorPickerViewController.h"
 
+#import "ColorApp-Swift.h"
+
 @interface ColorPickerViewController () {
     NSMutableArray *colorSwatchViews;
     NSInteger selectedColorSwatchView;
@@ -175,6 +177,16 @@
     }
 }
 
+#pragma mark -- IBActions
+
+- (IBAction)loadColorButonSingleTapped:(id)sender {
+    HHLoadNavigationHandler *loadNavigationHandler = [[HHLoadNavigationHandler alloc] initWithNavigationController:self.navigationController
+                                                                                                          animated:YES
+                                                                                   loadColorDelegateViewController:self
+                                                                                                        storyboard:self.storyboard];
+    [loadNavigationHandler handleNavigation];
+}
+
 // Presents a UIAlertController allowing the user to give their new color a name
 // before saving it to the phone
 - (IBAction)saveHue:(id)sender {
@@ -240,15 +252,6 @@
                                                           alpha:hueValues[3]/100.f];
     
     [self updateColorSliders:colorSwatchToUpdate];
-}
-
-#pragma mark -- Navigation
-
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    
-    LoadColorViewController *loadColorVC =(LoadColorViewController*)segue.destinationViewController;
-    loadColorVC.delegate = self;
-    
 }
 
 @end
