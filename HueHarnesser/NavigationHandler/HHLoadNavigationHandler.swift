@@ -10,10 +10,14 @@
 
 @objc class HHLoadNavigationHandler: NSObject, HHNavigationHandleable {
     
-    let navigationController: UINavigationController
-    let animated: Bool
-    let loadColorDelegate: LoadColorDelegate
-    let storyboard: UIStoryboard
+    // MARK: Properties
+    
+    internal let navigationController: UINavigationController
+    internal let animated: Bool
+    private let loadColorDelegate: LoadColorDelegate
+    private let storyboard: UIStoryboard
+    
+    // MARK: Inits
     
     init(navigationController: UINavigationController, animated: Bool, loadColorDelegate: LoadColorDelegate, storyboard: UIStoryboard) {
         self.navigationController = navigationController
@@ -21,6 +25,8 @@
         self.loadColorDelegate = loadColorDelegate
         self.storyboard = storyboard
     }
+    
+    // MARK: Public Methods
     
     func handleNavigation() {
         let loadColorViewController = storyboard.instantiateViewController(withIdentifier: HHViewControllerIdentifiers.loadColor.rawValue) as! LoadColorViewController

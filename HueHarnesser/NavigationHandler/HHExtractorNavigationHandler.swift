@@ -10,10 +10,14 @@
 
 @objc class HHExtractorNavigationHandler: NSObject, HHNavigationHandleable {
     
-    let navigationController: UINavigationController
-    let animated: Bool
-    let image: UIImage
-    let storyboard: UIStoryboard
+    // MARK: Properties
+    
+    internal let navigationController: UINavigationController
+    internal let animated: Bool
+    private let image: UIImage
+    private let storyboard: UIStoryboard
+    
+    // MARK: Init
     
     init(navigationController: UINavigationController, animated: Bool, image: UIImage, storyboard: UIStoryboard) {
         self.navigationController = navigationController
@@ -21,6 +25,8 @@
         self.image = image
         self.storyboard = storyboard
     }
+    
+    // MARK: Public Methods
     
     func handleNavigation() {
         let colorExtractorViewController = storyboard.instantiateViewController(withIdentifier: HHViewControllerIdentifiers.colorExtractor.rawValue) as! ColorExtractorViewController

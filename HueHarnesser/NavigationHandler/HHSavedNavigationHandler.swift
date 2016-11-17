@@ -6,17 +6,25 @@
 //  Copyright © 2016 Michael Berg. All rights reserved.
 //
 
+// TODO: remove storyboard property and inheritance of NSObject once VC isn't in storyboard
+
 @objc class HHSavedNavigationController: NSObject, HHNavigationHandleable {
     
-    let navigationController: UINavigationController
-    let animated: Bool
-    let storyboard: UIStoryboard
+    // MARK: Properties
+    
+    internal let navigationController: UINavigationController
+    internal let animated: Bool
+    private let storyboard: UIStoryboard
+    
+    // MARK: Inits
     
     init(navigationController: UINavigationController, animated: Bool, storyboard: UIStoryboard) {
         self.navigationController = navigationController
         self.animated = animated
         self.storyboard = storyboard
     }
+    
+    // MARK: Public Methods
     
     func handleNavigation() {
         let savedColorsViewController = storyboard.instantiateViewController(withIdentifier: HHViewControllerIdentifiers.savedColors.rawValue) as! SavedColorsViewController
