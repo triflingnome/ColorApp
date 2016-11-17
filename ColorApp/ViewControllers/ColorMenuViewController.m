@@ -27,6 +27,8 @@
                                                                      // informing them of the tip system
 }
 
+#pragma mark -- Button Actions
+
 - (IBAction)showInfoButtonTipSelector:(id)sender {
     [tipsMethodsClassInstance showInfoButtonTipWithTipNumber:0
                                             inViewController:self];
@@ -70,9 +72,16 @@
 
 - (IBAction)colorPickerButtonSingleTapped:(id)sender {
     HHPickerNavigationHandler *pickerNavigationHandler = [[HHPickerNavigationHandler alloc] initWithNavigationController:self.navigationController
-                                                                                                                animated:true
+                                                                                                                animated:YES
                                                                                                               storyboard:self.storyboard];
     [pickerNavigationHandler handleNavigation];
+}
+
+- (IBAction)colorCollectionButtonSingleTapped:(id)sender {
+    HHSavedNavigationHandler *savedNavigationHandler = [[HHSavedNavigationHandler alloc] initWithNavigationController:self.navigationController
+                                                                                                             animated:YES
+                                                                                                           storyboard:self.storyboard];
+    [savedNavigationHandler handleNavigation];
 }
 
 #pragma mark -- UIImagePickerViewController delegate methods
@@ -85,7 +94,8 @@
         UIImage *editedImage = info[UIImagePickerControllerEditedImage];
         
         HHExtractorNavigationHandler *extractorNavigationHandler = [[HHExtractorNavigationHandler alloc] initWithNavigationController:self.navigationController
-                                                                                                                             animated:true image:editedImage
+                                                                                                                             animated:YES
+                                                                                                                                image:editedImage
                                                                                                                            storyboard:self.storyboard];
         [extractorNavigationHandler handleNavigation];
     }
