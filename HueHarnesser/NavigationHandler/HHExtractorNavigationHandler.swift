@@ -6,14 +6,16 @@
 //  Copyright © 2016 Michael Berg. All rights reserved.
 //
 
+// TODO: remove storyboard property and inheritance of NSObject once VC isn't in storyboard
+
 import UIKit
 
-class HHExtractorNavigationHandler: HHNavigationHandleable {
+@objc class HHExtractorNavigationHandler: NSObject, HHNavigationHandleable {
     
     let navigationController: UINavigationController
     let animated: Bool
     let image: UIImage
-    let storyboard: UIStoryboard // will be removed once ColorExtractorVC is rewritten to not use storyboard
+    let storyboard: UIStoryboard
     
     init(navigationController: UINavigationController, animated: Bool, image: UIImage, storyboard: UIStoryboard) {
         self.navigationController = navigationController
@@ -23,7 +25,7 @@ class HHExtractorNavigationHandler: HHNavigationHandleable {
     }
     
     func handleNavigation() {
-        let colorExtractorViewController = storyboard.instantiateViewController(withIdentifier: "ColorExtractorViewController") as! ColorExtractorViewController
+        let colorExtractorViewController = storyboard.instantiateViewController(withIdentifier: HHViewControllerIdentifiers.colorExtractor.rawValue) as! ColorExtractorViewController
         colorExtractorViewController.chosenImage = image
         
         navigationController.pushViewController(colorExtractorViewController, animated: animated)

@@ -37,6 +37,7 @@
 		B4F5CF5F1DDD3AD600179F98 /* HHSavedNavigationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F5CF5E1DDD3AD600179F98 /* HHSavedNavigationHandler.swift */; };
 		B4F5CF611DDD3AF700179F98 /* HHLoadNavigationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F5CF601DDD3AF700179F98 /* HHLoadNavigationHandler.swift */; };
 		B4F5CF631DDD3B5C00179F98 /* HHLoadedNavigationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F5CF621DDD3B5C00179F98 /* HHLoadedNavigationHandler.swift */; };
+		B4F5CF691DDD437800179F98 /* HHViewControllerIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F5CF681DDD437800179F98 /* HHViewControllerIdentifiers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +100,7 @@
 		B4F5CF5E1DDD3AD600179F98 /* HHSavedNavigationHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHSavedNavigationHandler.swift; sourceTree = "<group>"; };
 		B4F5CF601DDD3AF700179F98 /* HHLoadNavigationHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHLoadNavigationHandler.swift; sourceTree = "<group>"; };
 		B4F5CF621DDD3B5C00179F98 /* HHLoadedNavigationHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHLoadedNavigationHandler.swift; sourceTree = "<group>"; };
+		B4F5CF681DDD437800179F98 /* HHViewControllerIdentifiers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHViewControllerIdentifiers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 		B40B48711DD7F82F009F6E9C /* HueHarnesser */ = {
 			isa = PBXGroup;
 			children = (
+				B4F5CF671DDD433C00179F98 /* Constants */,
 				B4F5CF591DDD3A5400179F98 /* NavigationHandler */,
 				B4F5CF561DDB80E200179F98 /* Foundation */,
 				B40B48731DD7F888009F6E9C /* ColorApp-Bridging-Header.h */,
@@ -272,6 +275,14 @@
 			path = NavigationHandler;
 			sourceTree = "<group>";
 		};
+		B4F5CF671DDD433C00179F98 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				B4F5CF681DDD437800179F98 /* HHViewControllerIdentifiers.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -394,6 +405,7 @@
 				B4F5CF5F1DDD3AD600179F98 /* HHSavedNavigationHandler.swift in Sources */,
 				B49738781B41DAFE00E09E5E /* LoadColorViewController.m in Sources */,
 				B4F5CF631DDD3B5C00179F98 /* HHLoadedNavigationHandler.swift in Sources */,
+				B4F5CF691DDD437800179F98 /* HHViewControllerIdentifiers.swift in Sources */,
 				B4F5CF581DDB815900179F98 /* HHNavigationHandleable.swift in Sources */,
 				B4A3D6A71B4B499000C701BE /* ColorExtractorViewController.m in Sources */,
 				B4A3D6AB1B4B49C000C701BE /* ColorMethods.m in Sources */,
