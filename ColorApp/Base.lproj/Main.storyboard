@@ -204,7 +204,7 @@
         <!--Color Picker View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ColorPickerViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ColorPickerViewController" id="vXZ-lx-hvc" customClass="ColorPickerViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -437,7 +437,7 @@
         <!--Load Color View Controller-->
         <scene sceneID="F9P-4W-Hx4">
             <objects>
-                <viewController id="oB6-WC-ClM" customClass="LoadColorViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoadColorViewController" id="oB6-WC-ClM" customClass="LoadColorViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CTc-8c-yOF"/>
                         <viewControllerLayoutGuide type="bottom" id="YPc-Pf-5fw"/>
@@ -492,7 +492,7 @@
         <!--Saved Colors View Controller-->
         <scene sceneID="D8n-d3-z0N">
             <objects>
-                <viewController id="2KI-fO-8HL" customClass="SavedColorsViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SavedColorsViewController" id="2KI-fO-8HL" customClass="SavedColorsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Cla-HN-dzn"/>
                         <viewControllerLayoutGuide type="bottom" id="SJ1-su-YNr"/>

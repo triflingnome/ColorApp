@@ -3,3 +3,4 @@
 //
 
 #import "ColorExtractorViewController.h"
+#import "LoadColorViewController.h"

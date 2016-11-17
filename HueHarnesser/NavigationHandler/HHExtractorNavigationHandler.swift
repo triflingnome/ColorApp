@@ -8,8 +8,6 @@
 
 // TODO: remove storyboard property and inheritance of NSObject once VC isn't in storyboard
 
-import UIKit
-
 @objc class HHExtractorNavigationHandler: NSObject, HHNavigationHandleable {
     
     let navigationController: UINavigationController
