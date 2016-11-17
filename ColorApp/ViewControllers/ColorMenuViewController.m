@@ -10,6 +10,8 @@
 
 #import "ColorMenuViewController.h"
 
+#import "ColorApp-Swift.h"
+
 @interface ColorMenuViewController () {
     TipsMethods *tipsMethodsClassInstance;
 }
@@ -24,6 +26,8 @@
     [tipsMethodsClassInstance showNewUserTipFromViewController:self];// tips that only displays once,
                                                                      // informing them of the tip system
 }
+
+#pragma mark -- Button Actions
 
 - (IBAction)showInfoButtonTipSelector:(id)sender {
     [tipsMethodsClassInstance showInfoButtonTipWithTipNumber:0
@@ -66,6 +70,20 @@
     [self presentViewController:actionSheetAlertController animated:YES completion:nil];
 }
 
+- (IBAction)colorPickerButtonSingleTapped:(id)sender {
+    HHPickerNavigationHandler *pickerNavigationHandler = [[HHPickerNavigationHandler alloc] initWithNavigationController:self.navigationController
+                                                                                                                animated:YES
+                                                                                                              storyboard:self.storyboard];
+    [pickerNavigationHandler handleNavigation];
+}
+
+- (IBAction)colorCollectionButtonSingleTapped:(id)sender {
+    HHSavedNavigationHandler *savedNavigationHandler = [[HHSavedNavigationHandler alloc] initWithNavigationController:self.navigationController
+                                                                                                             animated:YES
+                                                                                                           storyboard:self.storyboard];
+    [savedNavigationHandler handleNavigation];
+}
+
 #pragma mark -- UIImagePickerViewController delegate methods
 
 // after the image source has been determined, that data is sent to the ColorExtractorVC to be worked with
@@ -75,11 +93,11 @@
     if ([mediaType isEqualToString:(NSString *)kUTTypeImage]) {
         UIImage *editedImage = info[UIImagePickerControllerEditedImage];
         
-        // instantiate VC in NavCon, set property to editedImage and push
-        ColorExtractorViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"ColorExtractorViewController"];
-        vc.chosenImage = editedImage;
-        
-        [self.navigationController pushViewController:vc animated:YES];
+        HHExtractorNavigationHandler *extractorNavigationHandler = [[HHExtractorNavigationHandler alloc] initWithNavigationController:self.navigationController
+                                                                                                                             animated:YES
+                                                                                                                                image:editedImage
+                                                                                                                           storyboard:self.storyboard];
+        [extractorNavigationHandler handleNavigation];
     }
     
     [self dismissViewControllerAnimated:YES completion:nil];

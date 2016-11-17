@@ -11,6 +11,8 @@
 
 #import "LoadColorViewController.h"
 
+#import "ColorApp-Swift.h"
+
 @interface LoadColorViewController () {
     TipsMethods *tipsMethodsClassInstance;
 }
@@ -105,7 +107,10 @@
     hueValues[3] = [[self.alphaval objectAtIndex:indexPath.row] floatValue];
     
     [self.delegate returnHueValues:hueValues];
-    [self.navigationController popViewControllerAnimated:YES];
+    
+    HHLoadedNavigationHandler *loadedNavigationHandler = [[HHLoadedNavigationHandler alloc] initWithNavigationController:self.navigationController
+                                                                                                                animated:YES];
+    [loadedNavigationHandler handleNavigation];
 }
 
 @end
