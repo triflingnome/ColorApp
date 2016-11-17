@@ -8,7 +8,7 @@
 
 // TODO: remove storyboard property and inheritance of NSObject once VC isn't in storyboard
 
-@objc class HHSavedNavigationController: NSObject, HHNavigationHandleable {
+@objc class HHSavedNavigationHandler: NSObject, HHNavigationHandleable {
     
     // MARK: Properties
     

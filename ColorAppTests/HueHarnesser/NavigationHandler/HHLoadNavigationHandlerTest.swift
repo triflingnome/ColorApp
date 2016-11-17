@@ -36,7 +36,7 @@ class HHLoadNavigationHandlerTest: XCTestCase {
                 XCTFail("expectedExtractorViewController is not of type ColorExtractorViewController")
             }
         } else {
-            XCTFail("main.storyboard or debug image not found")
+            XCTFail("main.storyboard not found")
         }
     }
     

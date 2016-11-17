@@ -26,9 +26,10 @@ class HHPickerNavigationHandlerTest: XCTestCase {
             let viewControllers = navigationController.viewControllers
             guard viewControllers[viewControllers.endIndex - 1] is ColorPickerViewController else {
                 XCTFail("top view controller is not of type ColorPickerViewController")
+                return
             }
         } else {
-            XCTFail("main.storyboard or debug image not found")
+            XCTFail("main.storyboard not found")
         }
     }
     
