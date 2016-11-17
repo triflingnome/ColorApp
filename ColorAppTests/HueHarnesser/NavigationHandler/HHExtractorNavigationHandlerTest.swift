@@ -14,7 +14,7 @@ class HHExtractorNavigationHandlerTest: XCTestCase {
     
     func testHandleNavigation() {
         let navigationController = UINavigationController()
-        let animated = true
+        let animated = false
         let image = UIImage(named: "Debug")
         let storyboardName = Bundle.main.infoDictionary?["UIMainStoryboardFile"] as! String?
         

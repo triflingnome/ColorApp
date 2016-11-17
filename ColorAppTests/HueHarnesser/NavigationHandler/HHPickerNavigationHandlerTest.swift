@@ -14,7 +14,7 @@ class HHPickerNavigationHandlerTest: XCTestCase {
     
     func testHandleNavigation() {
         let navigationController = UINavigationController()
-        let animated = true
+        let animated = false
         let storyboardName = Bundle.main.infoDictionary?["UIMainStoryboardFile"] as! String?
         
         if let actualStoryboardName = storyboardName {

@@ -27,8 +27,8 @@
     func handleNavigation() {
         // check to make sure ColorPickerVC is before LoadColorVC before popping
         let viewControllers = navigationController.viewControllers
-        guard viewControllers[viewControllers.count - 2] is ColorPickerViewController,
-            viewControllers[viewControllers.count - 1] is LoadColorViewController else {
+        guard viewControllers[viewControllers.count - 1] is LoadColorViewController,
+            viewControllers[viewControllers.count - 2] is ColorPickerViewController else {
             return
         }
         
