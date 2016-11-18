@@ -17,20 +17,28 @@
     let alphaValue: NSNumber
     
     var color: UIColor {
-        return UIColor(red: CGFloat(redValue.floatValue) / CGFloat(255),
-                       green: CGFloat(greenValue.floatValue) / CGFloat(255),
-                       blue: CGFloat(blueValue.floatValue) / CGFloat(255),
-                       alpha: CGFloat(alphaValue.floatValue) / CGFloat(100))
+        return UIColor(red: CGFloat(redValue.doubleValue) / CGFloat(255),
+                       green: CGFloat(greenValue.doubleValue) / CGFloat(255),
+                       blue: CGFloat(blueValue.doubleValue) / CGFloat(255),
+                       alpha: CGFloat(alphaValue.doubleValue) / CGFloat(100))
     }
     
     // MARK: Inits
     
-    init(name: String, redValue: NSNumber, greenValue: NSNumber, blueValue: NSNumber, alphaValue: NSNumber) {
+    init(name: String, redValue: Double, greenValue: Double, blueValue: Double, alphaValue: Double) {
         self.name = name
-        self.redValue = redValue
-        self.greenValue = greenValue
-        self.blueValue = blueValue
-        self.alphaValue = alphaValue
+        self.redValue = NSNumber(value: redValue)
+        self.greenValue = NSNumber(value: greenValue)
+        self.blueValue = NSNumber(value: blueValue)
+        self.alphaValue = NSNumber(value: alphaValue)
+    }
+    
+    init(name: String, cgRedValue: CGFloat, cgGreenValue: CGFloat, cgBlueValue: CGFloat, cgAlphaValue: CGFloat) {
+        self.name = name
+        self.redValue = NSNumber(value: Double(cgRedValue))
+        self.greenValue = NSNumber(value: Double(cgGreenValue))
+        self.blueValue = NSNumber(value: Double(cgBlueValue))
+        self.alphaValue = NSNumber(value: Double(cgAlphaValue))
     }
     
 }
