@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B47E26511DDF7E4B003E8591 /* HHHueModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47E26501DDF7E4B003E8591 /* HHHueModel.swift */; };
+		B47E26541DDF7E6B003E8591 /* HHHueModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47E26531DDF7E6B003E8591 /* HHHueModelTest.swift */; };
 		B49738781B41DAFE00E09E5E /* LoadColorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B49738771B41DAFE00E09E5E /* LoadColorViewController.m */; };
 		B499DB5E1B443EFC006E174A /* LoadColorTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B499DB5C1B443EFC006E174A /* LoadColorTableViewCell.m */; };
 		B499DB5F1B443EFC006E174A /* LoadColorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B499DB5D1B443EFC006E174A /* LoadColorTableViewCell.xib */; };
@@ -56,6 +58,8 @@
 
 /* Begin PBXFileReference section */
 		B40B48731DD7F888009F6E9C /* ColorApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ColorApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		B47E26501DDF7E4B003E8591 /* HHHueModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHHueModel.swift; sourceTree = "<group>"; };
+		B47E26531DDF7E6B003E8591 /* HHHueModelTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHHueModelTest.swift; sourceTree = "<group>"; };
 		B49738761B41DAFE00E09E5E /* LoadColorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadColorViewController.h; sourceTree = "<group>"; };
 		B49738771B41DAFE00E09E5E /* LoadColorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadColorViewController.m; sourceTree = "<group>"; };
 		B499DB5B1B443EFC006E174A /* LoadColorTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadColorTableViewCell.h; sourceTree = "<group>"; };
@@ -136,11 +140,28 @@
 			isa = PBXGroup;
 			children = (
 				B4F5CF671DDD433C00179F98 /* Constants */,
+				B47E264F1DDF7E17003E8591 /* Model */,
 				B4F5CF591DDD3A5400179F98 /* NavigationHandler */,
 				B4F5CF561DDB80E200179F98 /* Foundation */,
 				B40B48731DD7F888009F6E9C /* ColorApp-Bridging-Header.h */,
 			);
 			path = HueHarnesser;
+			sourceTree = "<group>";
+		};
+		B47E264F1DDF7E17003E8591 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B47E26501DDF7E4B003E8591 /* HHHueModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B47E26521DDF7E56003E8591 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B47E26531DDF7E6B003E8591 /* HHHueModelTest.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		B499DB591B443EC5006E174A /* SavedColorsTableViewCell */ = {
@@ -296,6 +317,7 @@
 		B4F5CF6A1DDE203600179F98 /* HueHarnesser */ = {
 			isa = PBXGroup;
 			children = (
+				B47E26521DDF7E56003E8591 /* Model */,
 				B4F5CF6B1DDE205400179F98 /* NavigationHandler */,
 			);
 			path = HueHarnesser;
@@ -432,6 +454,7 @@
 				B4D2B2EB1B3893D800049922 /* SavedHues.xcdatamodeld in Sources */,
 				B4A3D6B41B4B6C0B00C701BE /* TipsMethods.m in Sources */,
 				B49D156D1B38735400E7CA0F /* ColorAppNavigationController.m in Sources */,
+				B47E26511DDF7E4B003E8591 /* HHHueModel.swift in Sources */,
 				B4A3D6B11B4B6AB700C701BE /* ColorOptionsViewController.m in Sources */,
 				B4F5CF5F1DDD3AD600179F98 /* HHSavedNavigationHandler.swift in Sources */,
 				B49738781B41DAFE00E09E5E /* LoadColorViewController.m in Sources */,
@@ -448,6 +471,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B47E26541DDF7E6B003E8591 /* HHHueModelTest.swift in Sources */,
 				B4F5CF701DDE20BE00179F98 /* HHLoadNavigationHandlerTest.swift in Sources */,
 				B4F5CF721DDE20E300179F98 /* HHLoadedNavigationHandlerTest.swift in Sources */,
 				B4F5CF6E1DDE209400179F98 /* HHExtractorNavigationHandlerTest.swift in Sources */,
