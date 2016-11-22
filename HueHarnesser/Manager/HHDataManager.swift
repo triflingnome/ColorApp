@@ -12,41 +12,55 @@ import CoreData
     
     // MARK: Properties
     
-    // TODO: NSFetchedResultsController computed property
-    var fetchedResultsController: NSFetchedResultsController<HHHueMO> {
-//        if _fetchedResultsController != nil {
-//            return _fetchedResultsController!
-//        }
-        
+    private let fetchedResultsController: NSFetchedResultsController<HHHueMO>
+    
+    // MARK: Inits
+    
+    init(with delegate: NSFetchedResultsControllerDelegate?) throws {
         let fetchRequest: NSFetchRequest<HHHueMO> = HHHueMO.fetchRequest()
-        let sortDescriptor = NSSortDescriptor(key: "name", ascending: false)
-        fetchRequest.sortDescriptors = [sortDescriptor]
+        let nameSortDescriptor = NSSortDescriptor(key: "name", ascending: false)
+        fetchRequest.sortDescriptors = [nameSortDescriptor]
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let managedObjectContext = appDelegate.persistentContainer.viewContext
-        let aFetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest,
-                                                                   managedObjectContext: managedObjectContext,
-                                                                   sectionNameKeyPath: nil,
-                                                                   cacheName: "DataManager")
-//        aFetchedResultsController.delegate = self
-//        _fetchedResultsController = aFetchedResultsController
+        let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest,
+                                                                  managedObjectContext: managedObjectContext,
+                                                                  sectionNameKeyPath: nil,
+                                                                  cacheName: "DataManager")
         
-        do {
-            try aFetchedResultsController.performFetch()
-        } catch {
-            let error = error as NSError
-            fatalError("Unresolved error \(error), \(error.userInfo)")
-        }
+        fetchedResultsController.delegate = delegate
+
+        try fetchedResultsController.performFetch()
         
-        return aFetchedResultsController
+        self.fetchedResultsController = fetchedResultsController
     }
     
-//    var _fetchedResultsController: NSFetchedResultsController<HHHueMO>? = nil
-    
     // MARK: Public Methods
-    
-    // TODO: class func saveHue(with hue: HHHueMO) { }
-    
-    // TODO: class func deleteHue(with hue: HHHueMO) { }
+
+    func createHue(with name: String, redValue: NSNumber, greenValue: NSNumber, blueValue: NSNumber, alphaValue: NSNumber) throws {
+        let managedObjectContext = self.fetchedResultsController.managedObjectContext
+        
+        let hue: HHHueMO
+        if #available(iOS 10.0, *) {
+            hue = HHHueMO(context: managedObjectContext)
+        } else {
+            hue = NSEntityDescription.insertNewObject(forEntityName: "Hue", into: managedObjectContext) as! HHHueMO
+        }
+        
+        hue.name = name
+        hue.redval = redValue
+        hue.greenval = greenValue
+        hue.blueval = blueValue
+        hue.alphaval = alphaValue
+        
+        try managedObjectContext.save()
+    }
+
+    func deleteHue(at indexPath: IndexPath) throws {
+        let managedObjectContext = self.fetchedResultsController.managedObjectContext
+        managedObjectContext.delete(self.fetchedResultsController.object(at: indexPath))
+
+        try managedObjectContext.save()
+    }
     
 }
