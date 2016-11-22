@@ -16,7 +16,7 @@ import CoreData
     
     // MARK: Inits
     
-    init(with delegate: NSFetchedResultsControllerDelegate?) throws {
+    init(_ delegate: NSFetchedResultsControllerDelegate?) throws {
         let fetchRequest: NSFetchRequest<HHHueMO> = HHHueMO.fetchRequest()
         let nameSortDescriptor = NSSortDescriptor(key: "name", ascending: false)
         fetchRequest.sortDescriptors = [nameSortDescriptor]
