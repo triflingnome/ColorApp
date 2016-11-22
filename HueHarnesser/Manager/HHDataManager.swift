@@ -48,10 +48,10 @@ import CoreData
         }
         
         hue.name = name
-        hue.redval = redValue
-        hue.greenval = greenValue
-        hue.blueval = blueValue
-        hue.alphaval = alphaValue
+        hue.redval = redValue.floatValue
+        hue.greenval = greenValue.floatValue
+        hue.blueval = blueValue.floatValue
+        hue.alphaval = alphaValue.floatValue
         
         try managedObjectContext.save()
     }
