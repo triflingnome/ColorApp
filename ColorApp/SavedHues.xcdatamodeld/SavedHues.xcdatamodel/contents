@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7549" systemVersion="14D136" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="Hue" syncable="YES">
-        <attribute name="alphaval" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
-        <attribute name="blueval" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
-        <attribute name="greenval" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11542" systemVersion="16B2657" minimumToolsVersion="Xcode 4.3" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
+    <entity name="Hue" representedClassName="HHHueMO" syncable="YES" codeGenerationType="class">
+        <attribute name="alphaval" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="blueval" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="greenval" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="redval" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="redval" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
     </entity>
     <elements>
         <element name="Hue" positionX="-27" positionY="18" width="128" height="120"/>
