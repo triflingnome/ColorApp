@@ -21,5 +21,7 @@
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
 
+@property (readonly, strong) NSPersistentContainer *persistentContainer;
+
 @end
 
