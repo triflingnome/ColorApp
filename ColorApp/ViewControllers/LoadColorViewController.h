@@ -21,7 +21,7 @@
 
 @end
 
-@interface LoadColorViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface LoadColorViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, weak) id <LoadColorDelegate> delegate;
