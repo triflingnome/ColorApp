@@ -19,6 +19,8 @@
     DatabaseMethods *databaseMethodsClassInstance;
 }
 
+@property (strong, nonatomic) HHDataManager *dataManager;
+
 @end
 
 @implementation ColorPickerViewController
@@ -68,8 +70,6 @@
     UITapGestureRecognizer *colorSwatchView4TapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(colorSwatchView4Selected:)];
     colorSwatchView4TapGesture.delegate = self;
     [self.colorSwatchView4 addGestureRecognizer:colorSwatchView4TapGesture];
-    UITapGestureRecognizer *colorSwatchView5TapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(colorSwatchView5Selected:)];
-    colorSwatchView5TapGesture.delegate = self;
 }
 
 - (IBAction)showInfoButtonTipSelector:(id)sender {
@@ -211,25 +211,30 @@
     UIAlertAction *saveAction = [UIAlertAction
                                actionWithTitle:NSLocalizedString(@"Save", @"Save action")
                                style:UIAlertActionStyleDefault
-                               handler:^(UIAlertAction *action)
-                               {
+                               handler:^(UIAlertAction *action) {
                                    UITextField *hueNameTextField = alertController.textFields.firstObject;
+                                   NSError *error;
                                    
-                                   NSLog(@"Save action");
                                    if ([hueNameTextField.text isEqualToString:@""]) {
-                                       NSLog(@"use default name");
-                                       [databaseMethodsClassInstance saveHueToDatabaseWithName:@"Hue"
-                                                                                        RedVal:self.colorSlider1.value
-                                                                                      GreenVal:self.colorSlider2.value
-                                                                                       BlueVal:self.colorSlider3.value
-                                                                                      AlphaVal:self.colorSlider4.value];
+                                       [self.dataManager createHueWith:@"Hue"
+                                                              redValue:[NSNumber numberWithFloat:self.colorSlider1.value]
+                                                            greenValue:[NSNumber numberWithFloat:self.colorSlider2.value]
+                                                             blueValue:[NSNumber numberWithFloat:self.colorSlider3.value]
+                                                            alphaValue:[NSNumber numberWithFloat:self.colorSlider4.value]
+                                                                 error:&error];
+                                       
                                    } else {
-                                       NSLog(@"%@", hueNameTextField.text);
-                                       [databaseMethodsClassInstance saveHueToDatabaseWithName:hueNameTextField.text
-                                                                                        RedVal:self.colorSlider1.value
-                                                                                      GreenVal:self.colorSlider2.value
-                                                                                       BlueVal:self.colorSlider3.value
-                                                                                      AlphaVal:self.colorSlider4.value];
+                                       [self.dataManager createHueWith:hueNameTextField.text
+                                                              redValue:[NSNumber numberWithFloat:self.colorSlider1.value]
+                                                            greenValue:[NSNumber numberWithFloat:self.colorSlider2.value]
+                                                             blueValue:[NSNumber numberWithFloat:self.colorSlider3.value]
+                                                            alphaValue:[NSNumber numberWithFloat:self.colorSlider4.value]
+                                                                 error:&error];
+                                   }
+                                   
+                                   if (error) {
+                                       NSLog(@"Unresolved error %@, %@", error, error.userInfo);
+                                       abort();
                                    }
                                }];
     
@@ -252,6 +257,23 @@
                                                           alpha:hueValues[3]/100.f];
     
     [self updateColorSliders:colorSwatchToUpdate];
+}
+
+#pragma mark -- Lazy Loading
+
+- (HHDataManager *)dataManager {
+    if (!_dataManager) {
+        NSError *error;
+        
+        _dataManager = [[HHDataManager alloc] initWithDelegate:nil error:&error];
+        
+        if (error) {
+            NSLog(@"Unresolved error %@, %@", error, error.userInfo);
+            abort();
+        }
+    }
+    
+    return _dataManager;
 }
 
 @end

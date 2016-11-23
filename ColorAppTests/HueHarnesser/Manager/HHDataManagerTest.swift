@@ -14,7 +14,7 @@ class HHDataManagerTest: XCTestCase {
 
     func testCreateHue() {
         do {
-            let dataManager = try HHDataManager(nil)
+            let dataManager = try HHDataManager(withDelegate: nil)
             
             let expectedName = "Test Create Hue"
             let expectedRedValue = NSNumber(value: 40.91)
@@ -35,7 +35,7 @@ class HHDataManagerTest: XCTestCase {
 
     func testDeleteHue() {
         do {
-            let dataManager = try HHDataManager(nil)
+            let dataManager = try HHDataManager(withDelegate: nil)
             
             let expectedName = "Test Create Hue"
             let expectedRedValue = NSNumber(value: 40.91)

@@ -105,6 +105,11 @@
     @synchronized (self) {
         if (_persistentContainer == nil) {
             _persistentContainer = [[NSPersistentContainer alloc] initWithName:@"SavedHues"];
+            
+            NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"SavedHues.sqlite"];
+            NSPersistentStoreDescription *storeDescription = [[NSPersistentStoreDescription alloc] initWithURL:storeURL];
+            _persistentContainer.persistentStoreDescriptions = @[storeDescription];
+            
             [_persistentContainer loadPersistentStoresWithCompletionHandler:^(NSPersistentStoreDescription *storeDescription, NSError *error) {
                 if (error != nil) {
                     NSLog(@"Unresolved error %@, %@", error, error.userInfo);
