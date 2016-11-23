@@ -14,7 +14,7 @@
 #import "TipsMethods.h"
 #import "Constants.h"
 
-@interface ColorExtractorViewController : UIViewController
+@interface ColorExtractorViewController : UIViewController <UIGestureRecognizerDelegate>
 
 @property (strong, nonatomic) IBOutlet UIImageView *colorExtractorImageView;
 

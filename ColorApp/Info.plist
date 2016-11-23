@@ -24,6 +24,8 @@
 	<string>2</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>Hue Harnesser wants to use your camera to take a picture to extract color values.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Hue Harnesser imports a photo from your device to extract color values. It never stores any photos imported with this feature.</string>
 	<key>UILaunchStoryboardName</key>

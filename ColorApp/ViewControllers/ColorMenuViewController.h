@@ -14,6 +14,6 @@
 #import "TipsMethods.h"
 #import "Constants.h"
 
-@interface ColorMenuViewController : UIViewController <UIImagePickerControllerDelegate>
+@interface ColorMenuViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @end

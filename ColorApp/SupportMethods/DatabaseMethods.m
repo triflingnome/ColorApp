@@ -18,7 +18,7 @@
                          GreenVal:(float)greenval
                           BlueVal:(float)blueval
                          AlphaVal:(float)alphaval {
-    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     NSManagedObjectContext *context = [appDelegate managedObjectContext];
     NSManagedObject *newHue;
     
@@ -43,7 +43,7 @@
                              AlphaVal:(float)alphaval {
     NSLog(@"in DatabaseMethods");
     
-    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     NSManagedObjectContext *context = [appDelegate managedObjectContext];
     
     NSEntityDescription *hueEntity = [NSEntityDescription entityForName:@"Hue" inManagedObjectContext:context];

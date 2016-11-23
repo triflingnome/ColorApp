@@ -109,9 +109,9 @@
 
 // typically called when a new color swatch is selected and the colorSliders need to be adjusted to
 // reflect the new color's RGBA components
-- (void)updateColorSliders:(UIView *)selectedColorSwatchView {
+- (void)updateColorSlidersFor:(UIView *)colorSwatchView {
     CGFloat R, G, B, A;
-    [selectedColorSwatchView.backgroundColor getRed:&R green:&G blue:&B alpha:&A];
+    [colorSwatchView.backgroundColor getRed:&R green:&G blue:&B alpha:&A];
     
     R *= 255.f;
     G *= 255.f;
@@ -140,7 +140,7 @@
     self.colorSwatchView1.layer.borderColor = [UIColor whiteColor].CGColor;
     self.colorSwatchView1.layer.borderWidth = 3.0f;
     selectedColorSwatchView = 0;
-    [self updateColorSliders:self.colorSwatchView1];
+    [self updateColorSlidersFor:self.colorSwatchView1];
 }
 
 - (void)colorSwatchView2Selected:(UITapGestureRecognizer *)gestureRecognizer {
@@ -149,7 +149,7 @@
     self.colorSwatchView2.layer.borderColor = [UIColor whiteColor].CGColor;
     self.colorSwatchView2.layer.borderWidth = 3.0f;
     selectedColorSwatchView = 1;
-    [self updateColorSliders:self.colorSwatchView2];
+    [self updateColorSlidersFor:self.colorSwatchView2];
 }
 
 - (void)colorSwatchView3Selected:(UITapGestureRecognizer *)gestureRecognizer {
@@ -158,7 +158,7 @@
     self.colorSwatchView3.layer.borderColor = [UIColor whiteColor].CGColor;
     self.colorSwatchView3.layer.borderWidth = 3.0f;
     selectedColorSwatchView = 2;
-    [self updateColorSliders:self.colorSwatchView3];
+    [self updateColorSlidersFor:self.colorSwatchView3];
 }
 
 - (void)colorSwatchView4Selected:(UITapGestureRecognizer *)gestureRecognizer {
@@ -167,7 +167,7 @@
     self.colorSwatchView4.layer.borderColor = [UIColor whiteColor].CGColor;
     self.colorSwatchView4.layer.borderWidth = 3.0f;
     selectedColorSwatchView = 3;
-    [self updateColorSliders:self.colorSwatchView4];
+    [self updateColorSlidersFor:self.colorSwatchView4];
 }
 
 - (void)unselectAllColorSwatchViews {
@@ -256,7 +256,7 @@
                                                            blue:hueValues[2]/255.f
                                                           alpha:hueValues[3]/100.f];
     
-    [self updateColorSliders:colorSwatchToUpdate];
+    [self updateColorSlidersFor:colorSwatchToUpdate];
 }
 
 #pragma mark -- Lazy Loading

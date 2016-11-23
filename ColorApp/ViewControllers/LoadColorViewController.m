@@ -38,7 +38,7 @@
     self.blueval = [[NSMutableArray alloc] init];
     self.alphaval = [[NSMutableArray alloc] init];
     
-    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     NSManagedObjectContext *context = [appDelegate managedObjectContext];
     NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Hue" inManagedObjectContext:context];
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
