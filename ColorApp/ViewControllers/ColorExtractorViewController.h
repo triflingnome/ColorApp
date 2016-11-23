@@ -10,7 +10,6 @@
 
 #import <UIKit/UIKit.h>
 #import "ColorMethods.h"
-#import "DatabaseMethods.h"
 #import "TipsMethods.h"
 #import "Constants.h"
 

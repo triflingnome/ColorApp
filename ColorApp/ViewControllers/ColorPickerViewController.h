@@ -12,7 +12,6 @@
 #import "AppDelegate.h"
 #import "LoadColorViewController.h"
 #import "TipsMethods.h"
-#import "DatabaseMethods.h"
 #import "Constants.h"
 
 @interface ColorPickerViewController : UIViewController <LoadColorDelegate, UIGestureRecognizerDelegate>

@@ -28,7 +28,6 @@
 		B49D15781B3889CB00E7CA0F /* SavedColorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B49D15771B3889CB00E7CA0F /* SavedColorsViewController.m */; };
 		B4A3D6A71B4B499000C701BE /* ColorExtractorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4A3D6A61B4B499000C701BE /* ColorExtractorViewController.m */; };
 		B4A3D6AB1B4B49C000C701BE /* ColorMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = B4A3D6AA1B4B49C000C701BE /* ColorMethods.m */; };
-		B4A3D6AE1B4B50E000C701BE /* DatabaseMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = B4A3D6AD1B4B50E000C701BE /* DatabaseMethods.m */; };
 		B4A3D6B11B4B6AB700C701BE /* ColorOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4A3D6B01B4B6AB700C701BE /* ColorOptionsViewController.m */; };
 		B4A3D6B41B4B6C0B00C701BE /* TipsMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = B4A3D6B31B4B6C0B00C701BE /* TipsMethods.m */; };
 		B4A3D6BA1B4C28AA00C701BE /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4A3D6B91B4C28AA00C701BE /* MobileCoreServices.framework */; };
@@ -97,8 +96,6 @@
 		B4A3D6A61B4B499000C701BE /* ColorExtractorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorExtractorViewController.m; sourceTree = "<group>"; };
 		B4A3D6A91B4B49C000C701BE /* ColorMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorMethods.h; sourceTree = "<group>"; };
 		B4A3D6AA1B4B49C000C701BE /* ColorMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorMethods.m; sourceTree = "<group>"; };
-		B4A3D6AC1B4B50E000C701BE /* DatabaseMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatabaseMethods.h; sourceTree = "<group>"; };
-		B4A3D6AD1B4B50E000C701BE /* DatabaseMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatabaseMethods.m; sourceTree = "<group>"; };
 		B4A3D6AF1B4B6AB700C701BE /* ColorOptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorOptionsViewController.h; sourceTree = "<group>"; };
 		B4A3D6B01B4B6AB700C701BE /* ColorOptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorOptionsViewController.m; sourceTree = "<group>"; };
 		B4A3D6B21B4B6C0B00C701BE /* TipsMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TipsMethods.h; sourceTree = "<group>"; };
@@ -312,8 +309,6 @@
 				B4A3D6AA1B4B49C000C701BE /* ColorMethods.m */,
 				B4A3D6BE1B4C4D2B00C701BE /* Constants.h */,
 				B4A3D6BF1B4C4D2B00C701BE /* Constants.m */,
-				B4A3D6AC1B4B50E000C701BE /* DatabaseMethods.h */,
-				B4A3D6AD1B4B50E000C701BE /* DatabaseMethods.m */,
 				B4A3D6B21B4B6C0B00C701BE /* TipsMethods.h */,
 				B4A3D6B31B4B6C0B00C701BE /* TipsMethods.m */,
 			);
@@ -509,7 +504,6 @@
 				B4F5CF581DDB815900179F98 /* HHNavigationHandleable.swift in Sources */,
 				B4A3D6A71B4B499000C701BE /* ColorExtractorViewController.m in Sources */,
 				B4A3D6AB1B4B49C000C701BE /* ColorMethods.m in Sources */,
-				B4A3D6AE1B4B50E000C701BE /* DatabaseMethods.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
