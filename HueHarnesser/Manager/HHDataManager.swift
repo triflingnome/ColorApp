@@ -16,7 +16,7 @@ import CoreData
     
     // MARK: Inits
     
-    init(withDelegate delegate: NSFetchedResultsControllerDelegate?) throws {
+    init(withDelegate delegate: NSFetchedResultsControllerDelegate?) {
         let fetchRequest: NSFetchRequest<HHHueMO> = HHHueMO.fetchRequest()
         let nameSortDescriptor = NSSortDescriptor(key: "name", ascending: false)
         fetchRequest.sortDescriptors = [nameSortDescriptor]
@@ -30,14 +30,20 @@ import CoreData
         
         fetchedResultsController.delegate = delegate
 
-        try fetchedResultsController.performFetch()
+        do {
+            try fetchedResultsController.performFetch()
+        } catch {
+            let error = error as NSError
+            fatalError("Unresolved error \(error), \(error.userInfo)")
+        }
+        
         
         self.fetchedResultsController = fetchedResultsController
     }
     
     // MARK: Public Methods
 
-    func createHue(with name: String, redValue: NSNumber, greenValue: NSNumber, blueValue: NSNumber, alphaValue: NSNumber) throws {
+    func createHue(with name: String, redValue: NSNumber, greenValue: NSNumber, blueValue: NSNumber, alphaValue: NSNumber) {
         let managedObjectContext = self.fetchedResultsController.managedObjectContext
         
         let hue: HHHueMO
@@ -53,14 +59,25 @@ import CoreData
         hue.blueval = blueValue.floatValue
         hue.alphaval = alphaValue.floatValue
         
-        try managedObjectContext.save()
+        self.saveContext(with: managedObjectContext)
     }
 
-    func deleteHue(at indexPath: IndexPath) throws {
+    func deleteHue(at indexPath: IndexPath) {
         let managedObjectContext = self.fetchedResultsController.managedObjectContext
         managedObjectContext.delete(self.fetchedResultsController.object(at: indexPath))
 
-        try managedObjectContext.save()
+        self.saveContext(with: managedObjectContext)
+    }
+    
+    // MARK: Private Methods
+    
+    private func saveContext(with managedObjectContext: NSManagedObjectContext) {
+        do {
+            try managedObjectContext.save()
+        } catch {
+            let error = error as NSError
+            fatalError("Unresolved error \(error), \(error.userInfo)")
+        }
     }
     
 }

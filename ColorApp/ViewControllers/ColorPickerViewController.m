@@ -16,7 +16,6 @@
     NSMutableArray *colorSwatchViews;
     NSInteger selectedColorSwatchView;
     TipsMethods *tipsMethodsClassInstance;
-    DatabaseMethods *databaseMethodsClassInstance;
 }
 
 @property (strong, nonatomic) HHDataManager *dataManager;
@@ -30,7 +29,6 @@
     [super viewDidLoad];
     self.title = COLOR_PICKER_TITLE;
     tipsMethodsClassInstance = [[TipsMethods alloc] init];
-    databaseMethodsClassInstance = [[DatabaseMethods alloc] init];
     
     selectedColorSwatchView = 0;
     
@@ -213,29 +211,18 @@
                                style:UIAlertActionStyleDefault
                                handler:^(UIAlertAction *action) {
                                    UITextField *hueNameTextField = alertController.textFields.firstObject;
-                                   NSError *error;
-                                   
+                                   NSString *hueName;
                                    if ([hueNameTextField.text isEqualToString:@""]) {
-                                       [self.dataManager createHueWith:@"Hue"
-                                                              redValue:[NSNumber numberWithFloat:self.colorSlider1.value]
-                                                            greenValue:[NSNumber numberWithFloat:self.colorSlider2.value]
-                                                             blueValue:[NSNumber numberWithFloat:self.colorSlider3.value]
-                                                            alphaValue:[NSNumber numberWithFloat:self.colorSlider4.value]
-                                                                 error:&error];
-                                       
+                                       hueName = @"Hue";
                                    } else {
-                                       [self.dataManager createHueWith:hueNameTextField.text
-                                                              redValue:[NSNumber numberWithFloat:self.colorSlider1.value]
-                                                            greenValue:[NSNumber numberWithFloat:self.colorSlider2.value]
-                                                             blueValue:[NSNumber numberWithFloat:self.colorSlider3.value]
-                                                            alphaValue:[NSNumber numberWithFloat:self.colorSlider4.value]
-                                                                 error:&error];
+                                       hueName = hueNameTextField.text;
                                    }
                                    
-                                   if (error) {
-                                       NSLog(@"Unresolved error %@, %@", error, error.userInfo);
-                                       abort();
-                                   }
+                                   [self.dataManager createHueWith:hueName
+                                                          redValue:[NSNumber numberWithFloat:self.colorSlider1.value]
+                                                        greenValue:[NSNumber numberWithFloat:self.colorSlider2.value]
+                                                         blueValue:[NSNumber numberWithFloat:self.colorSlider3.value]
+                                                        alphaValue:[NSNumber numberWithFloat:self.colorSlider4.value]];
                                }];
     
     [alertController addAction:cancelAction];
@@ -263,14 +250,7 @@
 
 - (HHDataManager *)dataManager {
     if (!_dataManager) {
-        NSError *error;
-        
-        _dataManager = [[HHDataManager alloc] initWithDelegate:nil error:&error];
-        
-        if (error) {
-            NSLog(@"Unresolved error %@, %@", error, error.userInfo);
-            abort();
-        }
+        _dataManager = [[HHDataManager alloc] initWithDelegate:nil];
     }
     
     return _dataManager;
