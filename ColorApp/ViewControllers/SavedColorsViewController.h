@@ -15,7 +15,7 @@
 #import "DatabaseMethods.h"
 #import "Constants.h"
 
-@interface SavedColorsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface SavedColorsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 

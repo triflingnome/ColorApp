@@ -12,7 +12,7 @@ import CoreData
     
     // MARK: Properties
     
-    private let fetchedResultsController: NSFetchedResultsController<HHHueMO>
+    let fetchedResultsController: NSFetchedResultsController<HHHueMO>
     
     // MARK: Inits
     
