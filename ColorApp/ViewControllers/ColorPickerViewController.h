@@ -12,10 +12,9 @@
 #import "AppDelegate.h"
 #import "LoadColorViewController.h"
 #import "TipsMethods.h"
-#import "DatabaseMethods.h"
 #import "Constants.h"
 
-@interface ColorPickerViewController : UIViewController <LoadColorDelegate>
+@interface ColorPickerViewController : UIViewController <LoadColorDelegate, UIGestureRecognizerDelegate>
 
 @property (nonatomic) IBOutlet UISlider *colorSlider1;// for Red or Cyan
 @property (nonatomic) IBOutlet UISlider *colorSlider2;// Green or Magenta

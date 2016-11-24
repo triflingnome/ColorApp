@@ -16,8 +16,9 @@
     NSMutableArray *colorSwatchViews;
     NSInteger selectedColorSwatchView;
     TipsMethods *tipsMethodsClassInstance;
-    DatabaseMethods *databaseMethodsClassInstance;
 }
+
+@property (strong, nonatomic) HHDataManager *dataManager;
 
 @end
 
@@ -28,7 +29,6 @@
     [super viewDidLoad];
     self.title = COLOR_PICKER_TITLE;
     tipsMethodsClassInstance = [[TipsMethods alloc] init];
-    databaseMethodsClassInstance = [[DatabaseMethods alloc] init];
     
     selectedColorSwatchView = 0;
     
@@ -68,8 +68,6 @@
     UITapGestureRecognizer *colorSwatchView4TapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(colorSwatchView4Selected:)];
     colorSwatchView4TapGesture.delegate = self;
     [self.colorSwatchView4 addGestureRecognizer:colorSwatchView4TapGesture];
-    UITapGestureRecognizer *colorSwatchView5TapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(colorSwatchView5Selected:)];
-    colorSwatchView5TapGesture.delegate = self;
 }
 
 - (IBAction)showInfoButtonTipSelector:(id)sender {
@@ -109,9 +107,9 @@
 
 // typically called when a new color swatch is selected and the colorSliders need to be adjusted to
 // reflect the new color's RGBA components
-- (void)updateColorSliders:(UIView *)selectedColorSwatchView {
+- (void)updateColorSlidersFor:(UIView *)colorSwatchView {
     CGFloat R, G, B, A;
-    [selectedColorSwatchView.backgroundColor getRed:&R green:&G blue:&B alpha:&A];
+    [colorSwatchView.backgroundColor getRed:&R green:&G blue:&B alpha:&A];
     
     R *= 255.f;
     G *= 255.f;
@@ -140,7 +138,7 @@
     self.colorSwatchView1.layer.borderColor = [UIColor whiteColor].CGColor;
     self.colorSwatchView1.layer.borderWidth = 3.0f;
     selectedColorSwatchView = 0;
-    [self updateColorSliders:self.colorSwatchView1];
+    [self updateColorSlidersFor:self.colorSwatchView1];
 }
 
 - (void)colorSwatchView2Selected:(UITapGestureRecognizer *)gestureRecognizer {
@@ -149,7 +147,7 @@
     self.colorSwatchView2.layer.borderColor = [UIColor whiteColor].CGColor;
     self.colorSwatchView2.layer.borderWidth = 3.0f;
     selectedColorSwatchView = 1;
-    [self updateColorSliders:self.colorSwatchView2];
+    [self updateColorSlidersFor:self.colorSwatchView2];
 }
 
 - (void)colorSwatchView3Selected:(UITapGestureRecognizer *)gestureRecognizer {
@@ -158,7 +156,7 @@
     self.colorSwatchView3.layer.borderColor = [UIColor whiteColor].CGColor;
     self.colorSwatchView3.layer.borderWidth = 3.0f;
     selectedColorSwatchView = 2;
-    [self updateColorSliders:self.colorSwatchView3];
+    [self updateColorSlidersFor:self.colorSwatchView3];
 }
 
 - (void)colorSwatchView4Selected:(UITapGestureRecognizer *)gestureRecognizer {
@@ -167,7 +165,7 @@
     self.colorSwatchView4.layer.borderColor = [UIColor whiteColor].CGColor;
     self.colorSwatchView4.layer.borderWidth = 3.0f;
     selectedColorSwatchView = 3;
-    [self updateColorSliders:self.colorSwatchView4];
+    [self updateColorSlidersFor:self.colorSwatchView4];
 }
 
 - (void)unselectAllColorSwatchViews {
@@ -211,26 +209,20 @@
     UIAlertAction *saveAction = [UIAlertAction
                                actionWithTitle:NSLocalizedString(@"Save", @"Save action")
                                style:UIAlertActionStyleDefault
-                               handler:^(UIAlertAction *action)
-                               {
+                               handler:^(UIAlertAction *action) {
                                    UITextField *hueNameTextField = alertController.textFields.firstObject;
-                                   
-                                   NSLog(@"Save action");
+                                   NSString *hueName;
                                    if ([hueNameTextField.text isEqualToString:@""]) {
-                                       NSLog(@"use default name");
-                                       [databaseMethodsClassInstance saveHueToDatabaseWithName:@"Hue"
-                                                                                        RedVal:self.colorSlider1.value
-                                                                                      GreenVal:self.colorSlider2.value
-                                                                                       BlueVal:self.colorSlider3.value
-                                                                                      AlphaVal:self.colorSlider4.value];
+                                       hueName = @"Hue";
                                    } else {
-                                       NSLog(@"%@", hueNameTextField.text);
-                                       [databaseMethodsClassInstance saveHueToDatabaseWithName:hueNameTextField.text
-                                                                                        RedVal:self.colorSlider1.value
-                                                                                      GreenVal:self.colorSlider2.value
-                                                                                       BlueVal:self.colorSlider3.value
-                                                                                      AlphaVal:self.colorSlider4.value];
+                                       hueName = hueNameTextField.text;
                                    }
+                                   
+                                   [self.dataManager createHueWith:hueName
+                                                          redValue:[NSNumber numberWithFloat:self.colorSlider1.value]
+                                                        greenValue:[NSNumber numberWithFloat:self.colorSlider2.value]
+                                                         blueValue:[NSNumber numberWithFloat:self.colorSlider3.value]
+                                                        alphaValue:[NSNumber numberWithFloat:self.colorSlider4.value]];
                                }];
     
     [alertController addAction:cancelAction];
@@ -251,7 +243,17 @@
                                                            blue:hueValues[2]/255.f
                                                           alpha:hueValues[3]/100.f];
     
-    [self updateColorSliders:colorSwatchToUpdate];
+    [self updateColorSlidersFor:colorSwatchToUpdate];
+}
+
+#pragma mark -- Lazy Loading
+
+- (HHDataManager *)dataManager {
+    if (!_dataManager) {
+        _dataManager = [[HHDataManager alloc] initWithDelegate:nil];
+    }
+    
+    return _dataManager;
 }
 
 @end

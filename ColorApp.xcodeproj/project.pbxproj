@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B40866ED1DDFADCA00E7271A /* UIColor+RGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40866EC1DDFADCA00E7271A /* UIColor+RGB.swift */; };
 		B40866F01DDFB75200E7271A /* UIColor+RGBTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40866EF1DDFB75100E7271A /* UIColor+RGBTest.swift */; };
+		B43ECE991DE4FDA600985EED /* HHDataManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43ECE981DE4FDA600985EED /* HHDataManagerTest.swift */; };
 		B47E26511DDF7E4B003E8591 /* HHHueModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47E26501DDF7E4B003E8591 /* HHHueModel.swift */; };
 		B47E26541DDF7E6B003E8591 /* HHHueModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47E26531DDF7E6B003E8591 /* HHHueModelTest.swift */; };
 		B49738781B41DAFE00E09E5E /* LoadColorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B49738771B41DAFE00E09E5E /* LoadColorViewController.m */; };
@@ -27,7 +28,6 @@
 		B49D15781B3889CB00E7CA0F /* SavedColorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B49D15771B3889CB00E7CA0F /* SavedColorsViewController.m */; };
 		B4A3D6A71B4B499000C701BE /* ColorExtractorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4A3D6A61B4B499000C701BE /* ColorExtractorViewController.m */; };
 		B4A3D6AB1B4B49C000C701BE /* ColorMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = B4A3D6AA1B4B49C000C701BE /* ColorMethods.m */; };
-		B4A3D6AE1B4B50E000C701BE /* DatabaseMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = B4A3D6AD1B4B50E000C701BE /* DatabaseMethods.m */; };
 		B4A3D6B11B4B6AB700C701BE /* ColorOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4A3D6B01B4B6AB700C701BE /* ColorOptionsViewController.m */; };
 		B4A3D6B41B4B6C0B00C701BE /* TipsMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = B4A3D6B31B4B6C0B00C701BE /* TipsMethods.m */; };
 		B4A3D6BA1B4C28AA00C701BE /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4A3D6B91B4C28AA00C701BE /* MobileCoreServices.framework */; };
@@ -46,6 +46,7 @@
 		B4F5CF721DDE20E300179F98 /* HHLoadedNavigationHandlerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F5CF711DDE20E300179F98 /* HHLoadedNavigationHandlerTest.swift */; };
 		B4F5CF741DDE20F300179F98 /* HHPickerNavigationHandlerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F5CF731DDE20F300179F98 /* HHPickerNavigationHandlerTest.swift */; };
 		B4F5CF761DDE20FF00179F98 /* HHSavedNavigationHandlerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F5CF751DDE20FF00179F98 /* HHSavedNavigationHandlerTest.swift */; };
+		B4F5F5A91DE3D81B00500CE4 /* HHDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F5F5A81DE3D81B00500CE4 /* HHDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		B40866EC1DDFADCA00E7271A /* UIColor+RGB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+RGB.swift"; sourceTree = "<group>"; };
 		B40866EF1DDFB75100E7271A /* UIColor+RGBTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+RGBTest.swift"; sourceTree = "<group>"; };
 		B40B48731DD7F888009F6E9C /* ColorApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ColorApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		B43ECE981DE4FDA600985EED /* HHDataManagerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHDataManagerTest.swift; sourceTree = "<group>"; };
 		B47E26501DDF7E4B003E8591 /* HHHueModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHHueModel.swift; sourceTree = "<group>"; };
 		B47E26531DDF7E6B003E8591 /* HHHueModelTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHHueModelTest.swift; sourceTree = "<group>"; };
 		B49738761B41DAFE00E09E5E /* LoadColorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadColorViewController.h; sourceTree = "<group>"; };
@@ -94,8 +96,6 @@
 		B4A3D6A61B4B499000C701BE /* ColorExtractorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorExtractorViewController.m; sourceTree = "<group>"; };
 		B4A3D6A91B4B49C000C701BE /* ColorMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorMethods.h; sourceTree = "<group>"; };
 		B4A3D6AA1B4B49C000C701BE /* ColorMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorMethods.m; sourceTree = "<group>"; };
-		B4A3D6AC1B4B50E000C701BE /* DatabaseMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatabaseMethods.h; sourceTree = "<group>"; };
-		B4A3D6AD1B4B50E000C701BE /* DatabaseMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatabaseMethods.m; sourceTree = "<group>"; };
 		B4A3D6AF1B4B6AB700C701BE /* ColorOptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorOptionsViewController.h; sourceTree = "<group>"; };
 		B4A3D6B01B4B6AB700C701BE /* ColorOptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorOptionsViewController.m; sourceTree = "<group>"; };
 		B4A3D6B21B4B6C0B00C701BE /* TipsMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TipsMethods.h; sourceTree = "<group>"; };
@@ -118,6 +118,7 @@
 		B4F5CF711DDE20E300179F98 /* HHLoadedNavigationHandlerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHLoadedNavigationHandlerTest.swift; sourceTree = "<group>"; };
 		B4F5CF731DDE20F300179F98 /* HHPickerNavigationHandlerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHPickerNavigationHandlerTest.swift; sourceTree = "<group>"; };
 		B4F5CF751DDE20FF00179F98 /* HHSavedNavigationHandlerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHSavedNavigationHandlerTest.swift; sourceTree = "<group>"; };
+		B4F5F5A81DE3D81B00500CE4 /* HHDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,12 +162,21 @@
 			children = (
 				B4F5CF671DDD433C00179F98 /* Constants */,
 				B40866EB1DDFADA000E7271A /* Extensions */,
+				B4F5F5A71DE3D7C300500CE4 /* Manager */,
 				B47E264F1DDF7E17003E8591 /* Model */,
 				B4F5CF591DDD3A5400179F98 /* NavigationHandler */,
 				B4F5CF561DDB80E200179F98 /* Foundation */,
 				B40B48731DD7F888009F6E9C /* ColorApp-Bridging-Header.h */,
 			);
 			path = HueHarnesser;
+			sourceTree = "<group>";
+		};
+		B43ECE971DE4FD6700985EED /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				B43ECE981DE4FDA600985EED /* HHDataManagerTest.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 		B47E264F1DDF7E17003E8591 /* Model */ = {
@@ -299,8 +309,6 @@
 				B4A3D6AA1B4B49C000C701BE /* ColorMethods.m */,
 				B4A3D6BE1B4C4D2B00C701BE /* Constants.h */,
 				B4A3D6BF1B4C4D2B00C701BE /* Constants.m */,
-				B4A3D6AC1B4B50E000C701BE /* DatabaseMethods.h */,
-				B4A3D6AD1B4B50E000C701BE /* DatabaseMethods.m */,
 				B4A3D6B21B4B6C0B00C701BE /* TipsMethods.h */,
 				B4A3D6B31B4B6C0B00C701BE /* TipsMethods.m */,
 			);
@@ -339,6 +347,7 @@
 			isa = PBXGroup;
 			children = (
 				B40866EE1DDFB72F00E7271A /* Extension */,
+				B43ECE971DE4FD6700985EED /* Manager */,
 				B47E26521DDF7E56003E8591 /* Model */,
 				B4F5CF6B1DDE205400179F98 /* NavigationHandler */,
 			);
@@ -355,6 +364,14 @@
 				B4F5CF751DDE20FF00179F98 /* HHSavedNavigationHandlerTest.swift */,
 			);
 			path = NavigationHandler;
+			sourceTree = "<group>";
+		};
+		B4F5F5A71DE3D7C300500CE4 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				B4F5F5A81DE3D81B00500CE4 /* HHDataManager.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -483,10 +500,10 @@
 				B49738781B41DAFE00E09E5E /* LoadColorViewController.m in Sources */,
 				B4F5CF631DDD3B5C00179F98 /* HHLoadedNavigationHandler.swift in Sources */,
 				B4F5CF691DDD437800179F98 /* HHViewControllerIdentifiers.swift in Sources */,
+				B4F5F5A91DE3D81B00500CE4 /* HHDataManager.swift in Sources */,
 				B4F5CF581DDB815900179F98 /* HHNavigationHandleable.swift in Sources */,
 				B4A3D6A71B4B499000C701BE /* ColorExtractorViewController.m in Sources */,
 				B4A3D6AB1B4B49C000C701BE /* ColorMethods.m in Sources */,
-				B4A3D6AE1B4B50E000C701BE /* DatabaseMethods.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -501,6 +518,7 @@
 				B4F5CF6E1DDE209400179F98 /* HHExtractorNavigationHandlerTest.swift in Sources */,
 				B4F5CF761DDE20FF00179F98 /* HHSavedNavigationHandlerTest.swift in Sources */,
 				B4F5CF741DDE20F300179F98 /* HHPickerNavigationHandlerTest.swift in Sources */,
+				B43ECE991DE4FDA600985EED /* HHDataManagerTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -661,10 +679,6 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -686,10 +700,6 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
 				INFOPLIST_FILE = ColorAppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "sunstrider.$(PRODUCT_NAME:rfc1034identifier)";

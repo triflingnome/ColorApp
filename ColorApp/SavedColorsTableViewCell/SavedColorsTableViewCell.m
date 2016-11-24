@@ -26,6 +26,8 @@
 // the cell adjusts its position on the screen by changing the LayoutConstraints and move it
 // to a new position and animation the change, simulating a the cell sliding left or right
 - (void)awakeFromNib {
+    [super awakeFromNib];
+    
     // Initialization code
     topViewAdjusted = false;
     

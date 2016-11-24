@@ -17,11 +17,7 @@
     TipsMethods *tipsMethodsClassInstance;
 }
 
-@property (strong, nonatomic) NSMutableArray *name;
-@property (strong, nonatomic) NSMutableArray *redval;
-@property (strong, nonatomic) NSMutableArray *greenval;
-@property (strong, nonatomic) NSMutableArray *blueval;
-@property (strong, nonatomic) NSMutableArray *alphaval;
+@property (strong, nonatomic) HHDataManager *dataManager;
 
 @end
 
@@ -31,40 +27,6 @@
     [super viewDidLoad];
     self.title = LOAD_COLORS_TITLE;
     tipsMethodsClassInstance = [[TipsMethods alloc] init];
-    
-    self.name = [[NSMutableArray alloc] init];
-    self.redval = [[NSMutableArray alloc] init];
-    self.greenval = [[NSMutableArray alloc] init];
-    self.blueval = [[NSMutableArray alloc] init];
-    self.alphaval = [[NSMutableArray alloc] init];
-    
-    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
-    NSManagedObjectContext *context = [appDelegate managedObjectContext];
-    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Hue" inManagedObjectContext:context];
-    NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    [request setEntity:entityDescription];
-    
-    // search for all entity objects with name "Red"
-    //NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(name = %@)", @"Hue"];
-    //[request setPredicate:predicate];
-    NSManagedObject *matches = nil;
-    
-    NSError *error;
-    NSArray *objects = [context executeFetchRequest:request error:&error];
-    
-    if ([objects count] == 0) {
-        NSLog(@"No records found");
-    } else {
-        for (int i = 0;i < [objects count];i++) {
-            matches = objects[i];
-            [self.name addObject:[matches valueForKey:@"name"]];
-            [self.redval addObject:[matches valueForKey:@"redval"]];
-            [self.greenval addObject:[matches valueForKey:@"greenval"]];
-            [self.blueval addObject:[matches valueForKey:@"blueval"]];
-            [self.alphaval addObject:[matches valueForKey:@"alphaval"]];
-        }
-        
-    }
 }
 
 - (IBAction)showInfoButtonTipSelector:(id)sender {
@@ -72,10 +34,23 @@
                                             inViewController:self];
 }
 
+- (void)configureCell:(LoadColorTableViewCell *)cell withHue:(HHHueMO *)hue {
+    cell.hueNameLabel.text = hue.name;
+    cell.hueSwatchView.backgroundColor = [UIColor colorWithRed:hue.redval/255
+                                                         green:hue.greenval/255
+                                                          blue:hue.blueval/255
+                                                         alpha:hue.alphaval/100];
+}
+
 #pragma mark -- UITableViewDelegate methods
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return [[self.dataManager.fetchedResultsController sections] count];
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.name.count;
+    id <NSFetchedResultsSectionInfo> sectionInfo = [self.dataManager.fetchedResultsController sections][section];
+    return [sectionInfo numberOfObjects];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -87,30 +62,81 @@
         [tableView registerNib: [UINib nibWithNibName:@"LoadColorTableViewCell" bundle:nil] forCellReuseIdentifier:loadColorTableIdentifier];
         cell = [tableView dequeueReusableCellWithIdentifier:loadColorTableIdentifier];
     }
-    
-    NSInteger currentRow = indexPath.row;
-    cell.hueNameLabel.text = [self.name objectAtIndex:currentRow];
-    cell.hueSwatchView.backgroundColor = [UIColor colorWithRed:[[self.redval objectAtIndex:currentRow] floatValue]/255.f
-                                                         green:[[self.greenval objectAtIndex:currentRow] floatValue]/255.f
-                                                          blue:[[self.blueval objectAtIndex:currentRow] floatValue]/255.f
-                                                         alpha:[[self.alphaval objectAtIndex:currentRow] floatValue]/100.f];
+
+    HHHueMO *hue = [self.dataManager.fetchedResultsController objectAtIndexPath:indexPath];
+    [self configureCell:cell withHue:hue];
     
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    HHHueMO *hue = [self.dataManager.fetchedResultsController objectAtIndexPath:indexPath];
+    
     float *hueValues = (float *)malloc(sizeof(float) * 4);
-    hueValues[0] = [[self.redval objectAtIndex:indexPath.row] floatValue];
-    hueValues[1] = [[self.greenval objectAtIndex:indexPath.row] floatValue];
-    hueValues[2] = [[self.blueval objectAtIndex:indexPath.row] floatValue];
-    hueValues[3] = [[self.alphaval objectAtIndex:indexPath.row] floatValue];
+    hueValues[0] = hue.redval;
+    hueValues[1] = hue.greenval;
+    hueValues[2] = hue.blueval;
+    hueValues[3] = hue.alphaval;
     
     [self.delegate returnHueValues:hueValues];
     
     HHLoadedNavigationHandler *loadedNavigationHandler = [[HHLoadedNavigationHandler alloc] initWithNavigationController:self.navigationController
                                                                                                                 animated:YES];
     [loadedNavigationHandler handleNavigation];
+}
+
+#pragma mark -- NSFetchedResultsControllerDelegate methods
+
+- (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
+    [self.tableView beginUpdates];
+}
+
+- (void)controller:(NSFetchedResultsController *)controller didChangeSection:(id <NSFetchedResultsSectionInfo>)sectionInfo
+           atIndex:(NSUInteger)sectionIndex forChangeType:(NSFetchedResultsChangeType)type {
+    switch(type) {
+        case NSFetchedResultsChangeInsert:
+            [self.tableView insertSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+        case NSFetchedResultsChangeDelete:
+            [self.tableView deleteSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+        default:
+            return;
+    }
+}
+
+- (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject
+       atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type
+      newIndexPath:(NSIndexPath *)newIndexPath {
+    UITableView *tableView = self.tableView;
+    
+    switch(type) {
+        case NSFetchedResultsChangeInsert:
+            [tableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+        case NSFetchedResultsChangeDelete:
+            [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+        case NSFetchedResultsChangeUpdate:
+            [self configureCell:[tableView cellForRowAtIndexPath:indexPath] withHue:anObject];
+            break;
+        case NSFetchedResultsChangeMove:
+            [tableView moveRowAtIndexPath:indexPath toIndexPath:newIndexPath];
+            break;
+    }
+}
+
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
+    [self.tableView endUpdates];
+}
+
+#pragma mark -- Lazy Loading
+
+- (HHDataManager *)dataManager {
+    if (!_dataManager) {
+        _dataManager = [[HHDataManager alloc] initWithDelegate:self];
+    }
+    return _dataManager;
 }
 
 @end

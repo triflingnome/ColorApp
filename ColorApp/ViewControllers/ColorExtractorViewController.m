@@ -10,10 +10,11 @@
 
 #import "ColorExtractorViewController.h"
 
+#import "ColorApp-Swift.h"
+
 @interface ColorExtractorViewController () {
     UITapGestureRecognizer *singleTapGesture;
     ColorMethods *colorMethodsClassInstance;
-    DatabaseMethods *databaseMethodsClassInstance;
     TipsMethods *tipsMethodsClassInstance;
     
     NSMutableArray *colorPaneSwatchViews;
@@ -24,6 +25,8 @@
     float *blueVals;
     float *alphaVals;
 }
+
+@property (strong, nonatomic) HHDataManager *dataManager;
 
 @end
 
@@ -36,7 +39,6 @@
     tipsMethodsClassInstance = [[TipsMethods alloc] init];
     
     colorMethodsClassInstance = [[ColorMethods alloc] init];
-    databaseMethodsClassInstance = [[DatabaseMethods alloc] init];
     selectedColorPaneSwatchView = 0;
     colorPaneSwatchViews = [[NSMutableArray alloc] init];
     [colorPaneSwatchViews addObject:self.colorPaneSwatchView1];
@@ -120,7 +122,7 @@
                                                                   alpha:alphaVals[selectedColorPaneSwatchView]/100.f];
 }// end singleTapGestureSelector:
 
-// allows the user to give their newly saved color a name before adding it to the phone's database
+// allows the user to give their newly saved color a name before adding it to the phone's persistent store
 - (IBAction)colorPaneSaveColorButtonSingleTapAction:(id)sender {
     UIAlertController *alertController = [UIAlertController
                                           alertControllerWithTitle:@"Save Hue"
@@ -146,23 +148,18 @@
                                  handler:^(UIAlertAction *action)
                                  {
                                      UITextField *hueNameTextField = alertController.textFields.firstObject;
-                                     
-                                     NSLog(@"Save action");
+                                     NSString *hueName;
                                      if ([hueNameTextField.text isEqualToString:@""]) {
-                                         NSLog(@"use default name");
-                                         [databaseMethodsClassInstance saveHueToDatabaseWithName:@"Hue"
-                                                                                          RedVal:redVals[selectedColorPaneSwatchView]
-                                                                                        GreenVal:greenVals[selectedColorPaneSwatchView]
-                                                                                         BlueVal:blueVals[selectedColorPaneSwatchView]
-                                                                                        AlphaVal:alphaVals[selectedColorPaneSwatchView]];
+                                         hueName = @"Hue";
                                      } else {
-                                         NSLog(@"%@", hueNameTextField.text);
-                                         [databaseMethodsClassInstance saveHueToDatabaseWithName:hueNameTextField.text
-                                                                                          RedVal:redVals[selectedColorPaneSwatchView]
-                                                                                        GreenVal:greenVals[selectedColorPaneSwatchView]
-                                                                                         BlueVal:blueVals[selectedColorPaneSwatchView]
-                                                                                        AlphaVal:alphaVals[selectedColorPaneSwatchView]];
+                                         hueName = hueNameTextField.text;
                                      }
+                                     
+                                     [self.dataManager createHueWith:hueName
+                                                            redValue:[NSNumber numberWithFloat:redVals[selectedColorPaneSwatchView]]
+                                                          greenValue:[NSNumber numberWithFloat:greenVals[selectedColorPaneSwatchView]]
+                                                           blueValue:[NSNumber numberWithFloat:blueVals[selectedColorPaneSwatchView]]
+                                                          alphaValue:[NSNumber numberWithFloat:alphaVals[selectedColorPaneSwatchView]]];
                                  }];
     
     [alertController addAction:cancelAction];
@@ -215,6 +212,16 @@
         colorPaneSwatchView.layer.borderColor = [UIColor clearColor].CGColor;
         colorPaneSwatchView.layer.borderWidth = 0.0f;
     }
+}
+
+#pragma mark -- Lazy Loading
+
+- (HHDataManager *)dataManager {
+    if (!_dataManager) {
+        _dataManager = [[HHDataManager alloc] initWithDelegate:nil];
+    }
+    
+    return _dataManager;
 }
 
 @end
