@@ -26,7 +26,7 @@ import CoreData
         let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest,
                                                                   managedObjectContext: managedObjectContext,
                                                                   sectionNameKeyPath: nil,
-                                                                  cacheName: "DataManager")
+                                                                  cacheName: nil)
         
         fetchedResultsController.delegate = delegate
 
