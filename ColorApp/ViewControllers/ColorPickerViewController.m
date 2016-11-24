@@ -19,6 +19,8 @@
 }
 
 @property (strong, nonatomic) HHDataManager *dataManager;
+@property (strong, nonatomic) NSFetchedResultsController<HHHueMO *> *fetchedResultsController;
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
 @end
 
@@ -218,11 +220,25 @@
                                        hueName = hueNameTextField.text;
                                    }
                                    
-                                   [self.dataManager createHueWith:hueName
+                                   /*[self.dataManager createHueWith:hueName
                                                           redValue:[NSNumber numberWithFloat:self.colorSlider1.value]
                                                         greenValue:[NSNumber numberWithFloat:self.colorSlider2.value]
                                                          blueValue:[NSNumber numberWithFloat:self.colorSlider3.value]
-                                                        alphaValue:[NSNumber numberWithFloat:self.colorSlider4.value]];
+                                                        alphaValue:[NSNumber numberWithFloat:self.colorSlider4.value]];*/
+                                   HHHueMO *hue = [NSEntityDescription insertNewObjectForEntityForName:@"Hue" inManagedObjectContext:self.managedObjectContext];
+                                   hue.name = hueName;
+                                   hue.redval = self.colorSlider1.value;
+                                   hue.greenval = self.colorSlider2.value;
+                                   hue.blueval = self.colorSlider3.value;
+                                   hue.alphaval = self.colorSlider4.value;
+                                   
+                                   NSError *error = nil;
+                                   [self.managedObjectContext save:&error];
+                                   
+                                   if (error) {
+                                       NSLog(@"Unresolved error %@, %@", error, error.userInfo);
+                                       abort();
+                                   }
                                }];
     
     [alertController addAction:cancelAction];
@@ -254,6 +270,39 @@
     }
     
     return _dataManager;
+}
+
+- (NSManagedObjectContext *)managedObjectContext {
+    if (!_managedObjectContext) {
+        AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+        _managedObjectContext = appDelegate.persistentContainer.viewContext;
+    }
+    return _managedObjectContext;
+}
+
+- (NSFetchedResultsController<HHHueMO *> *)fetchedResultsController
+{
+    if (_fetchedResultsController != nil) {
+        return _fetchedResultsController;
+    }
+    
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Hue"];
+    NSSortDescriptor *nameSortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:NO];
+    request.sortDescriptors = @[nameSortDescriptor];
+    
+    NSFetchedResultsController<HHHueMO *> *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request
+                                                                                                           managedObjectContext:self.managedObjectContext
+                                                                                                             sectionNameKeyPath:nil
+                                                                                                                      cacheName:nil];
+    
+    NSError *error = nil;
+    if (![aFetchedResultsController performFetch:&error]) {
+        NSLog(@"Unresolved error %@, %@", error, error.userInfo);
+        abort();
+    }
+    
+    _fetchedResultsController = aFetchedResultsController;
+    return _fetchedResultsController;
 }
 
 @end

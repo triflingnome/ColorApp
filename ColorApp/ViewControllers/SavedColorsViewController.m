@@ -155,7 +155,7 @@
     NSFetchedResultsController<HHHueMO *> *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request
                                                                                                            managedObjectContext:self.managedObjectContext
                                                                                                              sectionNameKeyPath:nil
-                                                                                                                      cacheName:@"SavedColors"];
+                                                                                                                      cacheName:nil];
     aFetchedResultsController.delegate = self;
     
     NSError *error = nil;
