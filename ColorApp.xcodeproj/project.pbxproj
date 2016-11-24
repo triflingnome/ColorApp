@@ -428,6 +428,7 @@
 					};
 					B49B98801B22162400176FA6 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = PPB5EHNJFQ;
 						LastSwiftMigration = 0810;
 						TestTargetID = B49B98671B22162300176FA6;
 					};
@@ -645,6 +646,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = PPB5EHNJFQ;
 				INFOPLIST_FILE = ColorApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "sunstrider.$(PRODUCT_NAME:rfc1034identifier)";
@@ -663,6 +665,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = PPB5EHNJFQ;
 				INFOPLIST_FILE = ColorApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "sunstrider.$(PRODUCT_NAME:rfc1034identifier)";
@@ -679,6 +682,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = PPB5EHNJFQ;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -700,6 +704,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = PPB5EHNJFQ;
 				INFOPLIST_FILE = ColorAppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "sunstrider.$(PRODUCT_NAME:rfc1034identifier)";
