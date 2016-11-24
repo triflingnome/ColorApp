@@ -16,7 +16,8 @@
     TipsMethods *tipsMethodsClassInstance;
 }
 
-@property (strong, nonatomic) HHDataManager *dataManager;
+@property (strong, nonatomic) NSFetchedResultsController<HHHueMO *> *fetchedResultsController;
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
 @end
 
@@ -46,11 +47,11 @@
 #pragma mark -- UITableViewDelegate methods
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return [[self.dataManager.fetchedResultsController sections] count];
+    return [[self.fetchedResultsController sections] count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    id <NSFetchedResultsSectionInfo> sectionInfo = [self.dataManager.fetchedResultsController sections][section];
+    id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][section];
     return [sectionInfo numberOfObjects];
 }
 
@@ -64,7 +65,7 @@
         cell = [tableView dequeueReusableCellWithIdentifier:savedColorsTableIdentifier];
     }
 
-    HHHueMO *hue = [self.dataManager.fetchedResultsController objectAtIndexPath:indexPath];
+    HHHueMO *hue = [self.fetchedResultsController objectAtIndexPath:indexPath];
     [self configureCell:cell withHue:hue row:indexPath.row];
     
     return cell;
@@ -128,16 +129,43 @@
     NSInteger indexPathRow = btn.tag;
 
     NSIndexPath *indexPathToDelete = [NSIndexPath indexPathForRow:indexPathRow inSection:0];
-    [self.dataManager deleteHueAt:indexPathToDelete];
+    [self.managedObjectContext deleteObject:[self.fetchedResultsController objectAtIndexPath:indexPathToDelete]];
 }
 
 #pragma mark -- Lazy Loading
 
-- (HHDataManager *)dataManager {
-    if (!_dataManager) {
-        _dataManager = [[HHDataManager alloc] initWithDelegate:self];
+- (NSManagedObjectContext *)managedObjectContext {
+    if (!_managedObjectContext) {
+        AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+        _managedObjectContext = appDelegate.persistentContainer.viewContext;
     }
-    return _dataManager;
+    return _managedObjectContext;
+}
+
+- (NSFetchedResultsController<HHHueMO *> *)fetchedResultsController
+{
+    if (_fetchedResultsController != nil) {
+        return _fetchedResultsController;
+    }
+
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Hue"];
+    NSSortDescriptor *nameSortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:NO];
+    request.sortDescriptors = @[nameSortDescriptor];
+
+    NSFetchedResultsController<HHHueMO *> *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request
+                                                                                                           managedObjectContext:self.managedObjectContext
+                                                                                                             sectionNameKeyPath:nil
+                                                                                                                      cacheName:@"SavedColors"];
+    aFetchedResultsController.delegate = self;
+    
+    NSError *error = nil;
+    if (![aFetchedResultsController performFetch:&error]) {
+        NSLog(@"Unresolved error %@, %@", error, error.userInfo);
+        abort();
+    }
+    
+    _fetchedResultsController = aFetchedResultsController;
+    return _fetchedResultsController;
 }
 
 @end
