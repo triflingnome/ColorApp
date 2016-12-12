@@ -32,6 +32,7 @@
 		B4A3D6B41B4B6C0B00C701BE /* TipsMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = B4A3D6B31B4B6C0B00C701BE /* TipsMethods.m */; };
 		B4A3D6BA1B4C28AA00C701BE /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4A3D6B91B4C28AA00C701BE /* MobileCoreServices.framework */; };
 		B4A3D6C01B4C4D2B00C701BE /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = B4A3D6BF1B4C4D2B00C701BE /* Constants.m */; };
+		B4C1CA411DFF6D8300A573AF /* HHHueUpdatedDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C1CA401DFF6D8300A573AF /* HHHueUpdatedDelegate.swift */; };
 		B4D2B2EB1B3893D800049922 /* SavedHues.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B4D2B2E91B3893D800049922 /* SavedHues.xcdatamodeld */; };
 		B4D2B2ED1B38965700049922 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4D2B2EC1B38965700049922 /* CoreData.framework */; };
 		B4F5CF581DDB815900179F98 /* HHNavigationHandleable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F5CF571DDB815900179F98 /* HHNavigationHandleable.swift */; };
@@ -103,6 +104,7 @@
 		B4A3D6B91B4C28AA00C701BE /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		B4A3D6BE1B4C4D2B00C701BE /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		B4A3D6BF1B4C4D2B00C701BE /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		B4C1CA401DFF6D8300A573AF /* HHHueUpdatedDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHHueUpdatedDelegate.swift; sourceTree = "<group>"; };
 		B4D2B2EA1B3893D800049922 /* SavedHues.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SavedHues.xcdatamodel; sourceTree = "<group>"; };
 		B4D2B2EC1B38965700049922 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		B4F5CF571DDB815900179F98 /* HHNavigationHandleable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHNavigationHandleable.swift; sourceTree = "<group>"; };
@@ -318,6 +320,7 @@
 		B4F5CF561DDB80E200179F98 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				B4C1CA401DFF6D8300A573AF /* HHHueUpdatedDelegate.swift */,
 				B4F5CF571DDB815900179F98 /* HHNavigationHandleable.swift */,
 			);
 			path = Foundation;
@@ -483,6 +486,7 @@
 				B49B98741B22162300176FA6 /* ColorPickerViewController.m in Sources */,
 				B49D15781B3889CB00E7CA0F /* SavedColorsViewController.m in Sources */,
 				B49B98711B22162300176FA6 /* AppDelegate.m in Sources */,
+				B4C1CA411DFF6D8300A573AF /* HHHueUpdatedDelegate.swift in Sources */,
 				B4F5CF5B1DDD3A8500179F98 /* HHExtractorNavigationHandler.swift in Sources */,
 				B4A3D6C01B4C4D2B00C701BE /* Constants.m in Sources */,
 				B49B986E1B22162300176FA6 /* main.m in Sources */,
