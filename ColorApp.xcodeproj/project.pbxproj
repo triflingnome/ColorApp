@@ -33,6 +33,8 @@
 		B4A3D6BA1B4C28AA00C701BE /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4A3D6B91B4C28AA00C701BE /* MobileCoreServices.framework */; };
 		B4A3D6C01B4C4D2B00C701BE /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = B4A3D6BF1B4C4D2B00C701BE /* Constants.m */; };
 		B4C1CA411DFF6D8300A573AF /* HHHueUpdatedDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C1CA401DFF6D8300A573AF /* HHHueUpdatedDelegate.swift */; };
+		B4C1CA451DFF734600A573AF /* HHPickerSlidersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C1CA441DFF734600A573AF /* HHPickerSlidersView.swift */; };
+		B4C1CA471DFF73C800A573AF /* HHPickerSlidersView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4C1CA461DFF73C800A573AF /* HHPickerSlidersView.xib */; };
 		B4D2B2EB1B3893D800049922 /* SavedHues.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B4D2B2E91B3893D800049922 /* SavedHues.xcdatamodeld */; };
 		B4D2B2ED1B38965700049922 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4D2B2EC1B38965700049922 /* CoreData.framework */; };
 		B4F5CF581DDB815900179F98 /* HHNavigationHandleable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F5CF571DDB815900179F98 /* HHNavigationHandleable.swift */; };
@@ -105,6 +107,8 @@
 		B4A3D6BE1B4C4D2B00C701BE /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		B4A3D6BF1B4C4D2B00C701BE /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		B4C1CA401DFF6D8300A573AF /* HHHueUpdatedDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHHueUpdatedDelegate.swift; sourceTree = "<group>"; };
+		B4C1CA441DFF734600A573AF /* HHPickerSlidersView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHPickerSlidersView.swift; sourceTree = "<group>"; };
+		B4C1CA461DFF73C800A573AF /* HHPickerSlidersView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HHPickerSlidersView.xib; sourceTree = "<group>"; };
 		B4D2B2EA1B3893D800049922 /* SavedHues.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SavedHues.xcdatamodel; sourceTree = "<group>"; };
 		B4D2B2EC1B38965700049922 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		B4F5CF571DDB815900179F98 /* HHNavigationHandleable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHNavigationHandleable.swift; sourceTree = "<group>"; };
@@ -164,6 +168,7 @@
 			children = (
 				B4F5CF671DDD433C00179F98 /* Constants */,
 				B40866EB1DDFADA000E7271A /* Extensions */,
+				B4C1CA421DFF72FD00A573AF /* HuePicker */,
 				B4F5F5A71DE3D7C300500CE4 /* Manager */,
 				B47E264F1DDF7E17003E8591 /* Model */,
 				B4F5CF591DDD3A5400179F98 /* NavigationHandler */,
@@ -317,6 +322,23 @@
 			path = SupportMethods;
 			sourceTree = "<group>";
 		};
+		B4C1CA421DFF72FD00A573AF /* HuePicker */ = {
+			isa = PBXGroup;
+			children = (
+				B4C1CA431DFF732100A573AF /* View */,
+			);
+			path = HuePicker;
+			sourceTree = "<group>";
+		};
+		B4C1CA431DFF732100A573AF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B4C1CA441DFF734600A573AF /* HHPickerSlidersView.swift */,
+				B4C1CA461DFF73C800A573AF /* HHPickerSlidersView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		B4F5CF561DDB80E200179F98 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
@@ -466,6 +488,7 @@
 				B49B987C1B22162300176FA6 /* LaunchScreen.xib in Resources */,
 				B499DB641B44493D006E174A /* SavedColorsTableViewCell.xib in Resources */,
 				B49B98791B22162300176FA6 /* Images.xcassets in Resources */,
+				B4C1CA471DFF73C800A573AF /* HHPickerSlidersView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -491,6 +514,7 @@
 				B4A3D6C01B4C4D2B00C701BE /* Constants.m in Sources */,
 				B49B986E1B22162300176FA6 /* main.m in Sources */,
 				B40866ED1DDFADCA00E7271A /* UIColor+RGB.swift in Sources */,
+				B4C1CA451DFF734600A573AF /* HHPickerSlidersView.swift in Sources */,
 				B4F5CF611DDD3AF700179F98 /* HHLoadNavigationHandler.swift in Sources */,
 				B499DB5E1B443EFC006E174A /* LoadColorTableViewCell.m in Sources */,
 				B499DB631B44493D006E174A /* SavedColorsTableViewCell.m in Sources */,
