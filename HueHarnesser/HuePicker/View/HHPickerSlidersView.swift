@@ -12,8 +12,6 @@ class HHPickerSlidersView: UIView {
     
     // MARK: Properties
     
-    @IBOutlet private weak var contentView: UIView!
-    
     @IBOutlet private weak var redSlider: UISlider!
     @IBOutlet private weak var greenSlider: UISlider!
     @IBOutlet private weak var blueSlider: UISlider!
@@ -28,14 +26,14 @@ class HHPickerSlidersView: UIView {
     
     // MARK: Inits
     
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupView()
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        
-        Bundle.main.loadNibNamed("HHPickerSlidersView", owner: self, options: nil)
-        
-        contentView.frame = self.bounds
-        contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        self.addSubview(contentView)
+        setupView()
     }
     
     // MARK: IBActions
@@ -56,9 +54,10 @@ class HHPickerSlidersView: UIView {
         self.updateValueLabel(for: sender)
     }
     
-    // MARK: Methods
+    // MARK: Public Methods
     
-    func configure(with delegate: HHHueUpdatedDelegate, color: UIColor) {
+    // TODO: once there is a class with HHHueUpdatedDelegate, make this parameter non optional and update test file
+    func configure(with delegate: HHHueUpdatedDelegate?, color: UIColor) {
         self.delegate = delegate
 
         let rgbaDictionary = color.rgbaDictionary()
@@ -69,7 +68,29 @@ class HHPickerSlidersView: UIView {
             greenSlider.value = Float(rgbaDictionary["green"]!)
             blueSlider.value = Float(rgbaDictionary["blue"]!)
             alphaSlider.value = Float(rgbaDictionary["alpha"]!)
+            
+            updateValueLabel(for: redSlider)
+            updateValueLabel(for: greenSlider)
+            updateValueLabel(for: blueSlider)
+            updateValueLabel(for: alphaSlider)
         }
+    }
+    
+    // MARK: Private Methods
+    
+    private func setupView() {
+        let view = viewFromNibForClass()
+        view.frame = bounds
+        view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        addSubview(view)
+    }
+    
+    private func viewFromNibForClass() -> UIView {
+        let bundle = Bundle(for: type(of: self))
+        let nib = UINib(nibName: String(describing: type(of: self)), bundle: bundle)
+        let view = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
+        
+        return view
     }
     
     private func updateValueLabel(for slider: UISlider) {
